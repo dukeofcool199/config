@@ -91,6 +91,7 @@
       nodejs-16_x
       thefuck
       lazygit
+      delta
     ];
     shell = pkgs.zsh;
   };
@@ -129,6 +130,7 @@
       obs-studio
       blender
       openscad
+      mpv
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
