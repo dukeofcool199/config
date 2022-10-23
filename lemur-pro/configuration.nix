@@ -80,7 +80,7 @@
   users.users.jenkin = {
     isNormalUser = true;
     description = "jenkin Schibel";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "video" ];
     packages = with pkgs; [
       direnv
       nix-direnv
@@ -95,6 +95,7 @@
       delta
       ripgrep-all
       unclutter
+      rnix-lsp
     ];
     shell = pkgs.zsh;
   };
