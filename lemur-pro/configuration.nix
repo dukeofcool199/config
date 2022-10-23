@@ -92,6 +92,7 @@
       thefuck
       lazygit
       delta
+      ripgrep-all
     ];
     shell = pkgs.zsh;
   };
@@ -107,6 +108,8 @@
       chromium
       brave
       librewolf
+      tor
+      tor-browser-bundle-bin
 
       docker
       git
@@ -125,6 +128,8 @@
       pass
       polybarFull
       file
+      xclip
+      flameshot
 
       libreoffice
       obs-studio
