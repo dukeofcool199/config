@@ -93,6 +93,7 @@
       lazygit
       delta
       ripgrep-all
+      unclutter
     ];
     shell = pkgs.zsh;
   };
