@@ -14,6 +14,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
+  boot.kernelModules = [ "kvm-intel" ];
 
   networking.hostName = "skyberspace"; # Define your hostname.
 
