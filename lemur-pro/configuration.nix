@@ -27,6 +27,7 @@
   # Open ports in the firewall.
   networking.firewall = {
     enable = true;
+    allowPing = false;
     allowedTCPPorts = [];
   };
 
@@ -137,6 +138,8 @@
       blender
       openscad
       mpv
+      feh
+      redshift
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
