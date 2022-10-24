@@ -67,8 +67,10 @@ in
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
-  services.xserver.libinput.enable = true;
-  services.xserver.libinput.touchpad.tapping = true;
+  services.xserver.libinput = {
+    enable = true;
+    tapping = true;
+  };
 
   users.users.root.initialHashedPassword = initialPassword;
 
