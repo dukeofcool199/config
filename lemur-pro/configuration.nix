@@ -143,6 +143,7 @@ in
       file
       xclip
       flameshot
+      magic-wormhole
 
       libreoffice
       obs-studio
