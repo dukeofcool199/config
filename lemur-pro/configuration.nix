@@ -111,8 +111,13 @@ in
     initialHashedPassword = initialPassword;
   };
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+      allowBroken = true;
+    };
+  };
 
  
   # List packages installed in system profile. To search, run:
@@ -160,6 +165,9 @@ in
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
+  };
+    programs.zsh.ohMyZsh = {
+    enable = true;
   };
 
   # This value determines the NixOS release from which the default
