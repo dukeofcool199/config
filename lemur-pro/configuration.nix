@@ -5,13 +5,18 @@
 { config, pkgs, ... }:
 
 let
-  initialPassword = "changeme";
+  initialPassword = "";
 in
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      <nixpkgs/nixos/modules/virtualisation/qemu-vm.nix>
     ];
+  virtualisation = {
+    memorySize = 2048; # Use 2048MiB memory.
+    cores = 4;         # Simulate 4 cores.
+  };
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -41,10 +46,11 @@ in
   services.xserver.enable = true;
 
   # Enable the Cinnamon Desktop Environment.
-  # services.xserver.displayManager.lightdm.enable = true;
   # services.xserver.desktopManager.cinnamon.enable = true;
-  services.xserver.windowManager.xmonad.enable = true;
-  services.xserver.windowManager.xmonad.enableContribAndExtras = true;
+  services.xserver.windowManager.xmonad = {
+    enable = true;
+    enableContribAndExtras = true;
+  };
 
   # Configure keymap in X11
   services.xserver = {
@@ -69,7 +75,9 @@ in
   # Enable touchpad support (enabled default in most desktopManager).
   services.xserver.libinput = {
     enable = true;
-    tapping = true;
+    touchpad = {
+      tapping = true;
+    };
   };
 
   users.users.root.initialHashedPassword = initialPassword;
