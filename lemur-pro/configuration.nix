@@ -14,7 +14,7 @@ in
       <nixpkgs/nixos/modules/virtualisation/qemu-vm.nix>
     ];
   virtualisation = {
-    memorySize = 2048; # Use 2048MiB memory.
+    memorySize = 7629; # Use 2048MiB memory.
     cores = 4;         # Simulate 4 cores.
   };
 
