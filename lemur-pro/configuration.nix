@@ -139,6 +139,7 @@ in
       python3
 
       kitty
+      xterm
 
       tldr
       wget
