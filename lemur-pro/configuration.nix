@@ -87,26 +87,6 @@ in
     isNormalUser = true;
     description = "jenkin Schibel";
     extraGroups = [ "networkmanager" "wheel" "video" ];
-    packages = with pkgs; [
-      direnv
-      nix-direnv
-
-      dmenu
-      rofi
-      exa
-      fzf
-      lazygit
-      delta
-      ripgrep-all
-      entr
-      unclutter
-
-      newsboat
-
-      rnix-lsp
-
-      nodejs-16_x
-    ];
     shell = pkgs.zsh;
     initialHashedPassword = initialPassword;
   };
@@ -158,6 +138,29 @@ in
       mpv
       feh
       redshift
+      pulsemixer
+      pulseaudio-ctl
+
+      direnv
+      nix-direnv
+
+      dmenu
+      rofi
+      exa
+      fzf
+      lazygit
+      delta
+      ripgrep-all
+      entr
+      unclutter
+      steam-run
+      autorandr
+
+      newsboat
+
+      rnix-lsp
+
+      nodejs-16_x
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
