@@ -140,6 +140,11 @@ in
       redshift
       pulsemixer
       pulseaudio-ctl
+      xbindkeys
+      xbindkeys-config
+      zip
+      unzip
+      asciiquarium
 
       direnv
       nix-direnv
