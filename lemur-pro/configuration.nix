@@ -166,6 +166,13 @@ in
       rnix-lsp
 
       nodejs-16_x
+
+      monero-cli
+      monero-gui
+
+      bluez
+      blueman
+      bluez-tools
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
