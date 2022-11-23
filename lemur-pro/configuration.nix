@@ -11,18 +11,12 @@ in
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      <nixpkgs/nixos/modules/virtualisation/qemu-vm.nix>
     ];
-  virtualisation = {
-    memorySize = 7629; # Use 2048MiB memory.
-    cores = 4;         # Simulate 4 cores.
-  };
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
-  boot.kernelModules = [ "kvm-intel" ];
 
   networking.hostName = "skyberspace"; # Define your hostname.
 
@@ -183,9 +177,6 @@ in
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
-  };
-    programs.zsh.ohMyZsh = {
-    enable = true;
   };
 
   # This value determines the NixOS release from which the default
