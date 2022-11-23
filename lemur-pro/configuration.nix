@@ -39,6 +39,14 @@ in
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
+  #virtualbox stuff
+  virtualisation.virtualbox.host.enable = true;
+  virtualisation.virtualbox.host.enableExtensionPack = true;
+  virtualisation.virtualbox.guest.enable = true;
+  virtualisation.virtualbox.guest.x11 = true;
+
+  users.extraGroups.vboxusers.members = ["jenkin"];
+
   # Enable the Cinnamon Desktop Environment.
   # services.xserver.desktopManager.cinnamon.enable = true;
   services.xserver.windowManager.xmonad = {
@@ -110,7 +118,6 @@ in
       git
       vim
       neovim
-      virtualbox
 
       python3
 
@@ -152,6 +159,7 @@ in
       lazygit
       delta
       ripgrep-all
+      fd
       entr
       unclutter
       steam-run
@@ -169,6 +177,9 @@ in
       bluez
       blueman
       bluez-tools
+
+      udiskie
+      ntfs3g
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
