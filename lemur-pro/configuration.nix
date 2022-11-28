@@ -100,6 +100,13 @@ in
     config = {
       allowUnfree = true;
       allowBroken = true;
+      packageOverrides = pkgs: {
+        steam = pkgs.steam.override {
+          extraPkgs = pkgs: with pkgs; [
+            libgdiplus
+          ];
+        };
+      };
     };
   };
 
@@ -141,6 +148,7 @@ in
       mpv
       feh
       redshift
+      brightnessctl
       pulsemixer
       pulseaudio-ctl
       xbindkeys
@@ -180,6 +188,7 @@ in
 
       udiskie
       ntfs3g
+      (steam.override { withJava = true; })
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -189,6 +198,14 @@ in
     enable = true;
     enableSSHSupport = true;
   };
+
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
+  };
+
+  programs.java.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
