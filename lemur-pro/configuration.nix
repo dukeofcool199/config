@@ -166,7 +166,7 @@ in
       fzf
       lazygit
       delta
-      ripgrep-all
+      ripgrep
       fd
       entr
       unclutter
