@@ -198,6 +198,7 @@ in
     enable = true;
     enableSSHSupport = true;
   };
+  programs.slock.enable = true;
 
   programs.steam = {
     enable = true;
