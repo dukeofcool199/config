@@ -39,13 +39,20 @@ in
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  #virtualbox stuff
+  services.udev.packages = with pkgs;[ zsa-udev-rules ];
+
+  services.trezord.enable = true;
+
+  #virtualisation stuff
   virtualisation.virtualbox.host.enable = true;
   virtualisation.virtualbox.host.enableExtensionPack = true;
   virtualisation.virtualbox.guest.enable = true;
   virtualisation.virtualbox.guest.x11 = true;
-
   users.extraGroups.vboxusers.members = ["jenkin"];
+
+  virtualisation.docker.enable = true;
+  virtualisation.docker.rootless.enable = true;
+
 
   # Enable the Cinnamon Desktop Environment.
   # services.xserver.desktopManager.cinnamon.enable = true;
@@ -121,7 +128,6 @@ in
       tor
       tor-browser-bundle-bin
 
-      docker
       git
       vim
       neovim
@@ -181,6 +187,7 @@ in
 
       monero-cli
       monero-gui
+      trezor-suite
 
       bluez
       blueman
@@ -207,6 +214,8 @@ in
   };
 
   programs.java.enable = true;
+
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
