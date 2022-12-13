@@ -25,6 +25,7 @@ in
 
   # Open ports in the firewall.
   networking.firewall = {
+   allowedUDPPorts = [ 3000 19240 ];
     enable = true;
     allowPing = false;
   };
@@ -38,6 +39,8 @@ in
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
+
+  services.udisks2.enable = true;
 
   services.udev.packages = with pkgs;[ zsa-udev-rules ];
 
@@ -97,7 +100,7 @@ in
   users.users.jenkin = {
     isNormalUser = true;
     description = "jenkin Schibel";
-    extraGroups = [ "networkmanager" "wheel" "video" ];
+    extraGroups = [ "networkmanager" "wheel" "video" "adbusers" ];
     shell = pkgs.zsh;
     initialHashedPassword = initialPassword;
   };
@@ -121,10 +124,8 @@ in
   # List packages installed in system profile. To search, run:
   environment.systemPackages = with pkgs; [
       firefox
-      qutebrowser
       chromium
       brave
-      librewolf
       tor
       tor-browser-bundle-bin
 
@@ -148,6 +149,8 @@ in
       magic-wormhole
 
       libreoffice
+      spotify
+      tdesktop
       obs-studio
       blender
       openscad
@@ -212,6 +215,9 @@ in
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
   };
+
+  programs.adb.enable = true;
+  
 
   programs.java.enable = true;
 
