@@ -25,7 +25,7 @@ in
 
   # Open ports in the firewall.
   networking.firewall = {
-   allowedUDPPorts = [ 3000 19240 ];
+    allowedUDPPorts = [ 3000 19240 ];
     enable = true;
     allowPing = false;
   };
@@ -72,6 +72,9 @@ in
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+  services.avahi.enable = true;
+  services.avahi.nssmdns = true;
+  services.avahi.openFirewall = true;
 
   # Enable sound with pipewire.
   sound.enable = true;
@@ -130,6 +133,7 @@ in
       tor-browser-bundle-bin
 
       git
+      git-annex
       vim
       neovim
 
@@ -149,6 +153,7 @@ in
       magic-wormhole
 
       libreoffice
+      gimp
       spotify
       tdesktop
       obs-studio
