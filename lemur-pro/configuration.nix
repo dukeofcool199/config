@@ -49,6 +49,7 @@ in
   services.flatpak.enable = true;
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
+
   #virtualisation stuff
   virtualisation.virtualbox.host.enable = true;
   virtualisation.virtualbox.host.enableExtensionPack = true;
@@ -157,6 +158,8 @@ in
 
       libreoffice
       gimp
+      slic3r
+      freecad
       spotify
       tdesktop
       obs-studio
