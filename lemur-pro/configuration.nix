@@ -208,6 +208,8 @@ in
       openscad
       mpv
       feh
+      okular
+      mupdf
       redshift
       brightnessctl
       pulsemixer
