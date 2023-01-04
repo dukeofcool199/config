@@ -27,7 +27,7 @@ in
 
   # Open ports in the firewall.
   networking.firewall = {
-    allowedUDPPorts = [ 3000 19240 ];
+    trustedInterfaces = [ "vboxnet0" ];
     enable = true;
     allowPing = false;
   };
