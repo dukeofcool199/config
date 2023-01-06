@@ -110,7 +110,10 @@ in
       firefox
 
       git
+      git-annex
+      git-annex-utils
       vim
+      pass
       neovim
 
       python3
