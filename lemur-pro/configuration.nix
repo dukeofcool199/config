@@ -253,6 +253,12 @@ in
 
       udiskie
       ntfs3g
+
+      #games
+      tuxtype
+      tuxpaint
+      superTux
+      superTuxKart
       (steam.override { withJava = true; })
   ];
 
