@@ -98,8 +98,11 @@ in
   virtualisation.virtualbox.guest.x11 = true;
   users.extraGroups.vboxusers.members = ["jenkin"];
 
-  virtualisation.docker.enable = true;
-  virtualisation.docker.rootless.enable = true;
+  virtualisation.docker = {
+    enable = true;
+  };
+
+
 
 
   # Enable the Cinnamon Desktop Environment.
@@ -149,7 +152,7 @@ in
   users.users.jenkin = {
     isNormalUser = true;
     description = "jenkin Schibel";
-    extraGroups = [ "networkmanager" "wheel" "video" "adbusers" ];
+    extraGroups = [ "networkmanager" "wheel" "video" "adbusers" "docker" ];
     shell = pkgs.zsh;
     initialHashedPassword = initialPassword;
   };
@@ -199,8 +202,11 @@ in
       magic-wormhole
 
       libreoffice
+      audacity
+      ardour
       gimp
       slic3r
+      clamav
       freecad
       spotify
       tdesktop
@@ -246,6 +252,7 @@ in
       monero-cli
       monero-gui
       trezor-suite
+      zoom-us
 
       bluez
       blueman
