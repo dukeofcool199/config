@@ -253,6 +253,7 @@ in
       monero-gui
       trezor-suite
       zoom-us
+      discord
 
       bluez
       blueman
@@ -277,6 +278,8 @@ in
     enableSSHSupport = true;
   };
   programs.slock.enable = true;
+
+  programs.kdeconnect.enable = true;
 
   programs.steam = {
     enable = true;
