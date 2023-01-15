@@ -226,6 +226,7 @@ in
       zip
       unzip
       asciiquarium
+      qrencode
 
       direnv
       nix-direnv
@@ -243,9 +244,7 @@ in
       steam-run
       autorandr
 
-      newsboat
-
-      rnix-lsp
+      nil
 
       nodejs-16_x
 
