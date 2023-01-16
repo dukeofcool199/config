@@ -245,6 +245,7 @@ in
       autorandr
 
       nil
+      nixpkgs-fmt
 
       nodejs-16_x
 
