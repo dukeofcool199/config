@@ -11,7 +11,8 @@ let
 in
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
 
@@ -89,14 +90,14 @@ in
 
   services.flatpak.enable = true;
   xdg.portal.enable = true;
-  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
   #virtualisation stuff
   virtualisation.virtualbox.host.enable = true;
   virtualisation.virtualbox.host.enableExtensionPack = true;
   virtualisation.virtualbox.guest.enable = true;
   virtualisation.virtualbox.guest.x11 = true;
-  users.extraGroups.vboxusers.members = ["jenkin"];
+  users.extraGroups.vboxusers.members = [ "jenkin" ];
 
   virtualisation.docker = {
     enable = true;
@@ -172,102 +173,102 @@ in
     };
   };
 
- 
+
   # List packages installed in system profile. To search, run:
   environment.systemPackages = with pkgs; [
-      firefox
-      chromium
-      brave
-      tor
-      tor-browser-bundle-bin
+    firefox
+    chromium
+    brave
+    tor
+    tor-browser-bundle-bin
 
-      git
-      git-annex
-      vim
-      neovim
+    git
+    git-annex
+    vim
+    neovim
 
-      python3
+    python3
 
-      kitty
-      xterm
+    kitty
+    xterm
 
-      tldr
-      wget
-      curl
-      pass
-      polybarFull
-      file
-      xclip
-      flameshot
-      magic-wormhole
+    tldr
+    wget
+    curl
+    pass
+    polybarFull
+    file
+    xclip
+    flameshot
+    magic-wormhole
 
-      libreoffice
-      audacity
-      ardour
-      gimp
-      slic3r
-      clamav
-      freecad
-      spotify
-      tdesktop
-      obs-studio
-      blender
-      openscad
-      mpv
-      feh
-      okular
-      mupdf
-      redshift
-      brightnessctl
-      pulsemixer
-      pulseaudio-ctl
-      xbindkeys
-      xbindkeys-config
-      zip
-      unzip
-      asciiquarium
-      qrencode
+    libreoffice
+    audacity
+    ardour
+    gimp
+    slic3r
+    clamav
+    freecad
+    spotify
+    tdesktop
+    obs-studio
+    blender
+    openscad
+    mpv
+    feh
+    okular
+    mupdf
+    redshift
+    brightnessctl
+    pulsemixer
+    pulseaudio-ctl
+    xbindkeys
+    xbindkeys-config
+    zip
+    unzip
+    asciiquarium
+    qrencode
 
-      direnv
-      nix-direnv
+    direnv
+    nix-direnv
 
-      dmenu
-      rofi
-      exa
-      fzf
-      lazygit
-      delta
-      ripgrep
-      fd
-      entr
-      unclutter
-      steam-run
-      autorandr
+    dmenu
+    rofi
+    exa
+    fzf
+    lazygit
+    delta
+    ripgrep
+    fd
+    entr
+    unclutter
+    steam-run
+    autorandr
 
-      nil
-      nixpkgs-fmt
+    nil
+    nixpkgs-fmt
 
-      nodejs-16_x
+    nodejs-16_x
 
-      monero-cli
-      monero-gui
-      trezor-suite
-      zoom-us
-      discord
+    monero-cli
+    monero-gui
+    trezor-suite
+    zoom-us
+    discord
 
-      bluez
-      blueman
-      bluez-tools
+    bluez
+    blueman
+    bluez-tools
 
-      udiskie
-      ntfs3g
+    udiskie
+    ntfs3g
 
-      #games
-      tuxtype
-      tuxpaint
-      superTux
-      superTuxKart
-      (steam.override { withJava = true; })
+    #games
+    tuxtype
+    tuxpaint
+    superTux
+    superTuxKart
+    (steam.override { withJava = true; })
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -288,7 +289,7 @@ in
   };
 
   programs.adb.enable = true;
-  
+
 
   programs.java.enable = true;
 
@@ -304,7 +305,7 @@ in
   ];
   # if you also want support for flakes
   nixpkgs.overlays = [
-    (self: super: { nix-direnv = super.nix-direnv.override { enableFlakes = true; }; } )
+    (self: super: { nix-direnv = super.nix-direnv.override { enableFlakes = true; }; })
   ];
 
   # This value determines the NixOS release from which the default
