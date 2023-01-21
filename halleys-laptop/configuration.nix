@@ -56,6 +56,9 @@ in
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+  services.avahi.enable = true;
+  services.avahi.nssmdns = true;
+  services.avahi.openFirewall = true;  
 
   # Enable sound with pipewire.
   sound.enable = true;
@@ -84,7 +87,7 @@ in
   users.users.halley = {
     isNormalUser = true;
     description = "Halley Schibel";
-    extraGroups = [ "networkmanager" ];
+    extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.zsh;
     initialHashedPassword = initialPassword;
   };
@@ -108,6 +111,7 @@ in
   # List packages installed in system profile. To search, run:
   environment.systemPackages = with pkgs; [
       firefox
+      chromium
 
       git
       git-annex
