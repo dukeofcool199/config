@@ -13,6 +13,7 @@ in
   imports =
     [
       # Include the results of the hardware scan.
+      <nixos-hardware/system76>
       ./hardware-configuration.nix
     ];
 
