@@ -29,8 +29,8 @@ in
   # Open ports in the firewall.
   networking.firewall = {
     trustedInterfaces = [ "vboxnet0" ];
-    enable = true;
-    allowPing = false;
+    enable = false;
+    allowPing = true;
   };
 
 
@@ -112,6 +112,8 @@ in
     enable = true;
     enableContribAndExtras = true;
   };
+
+
 
   # Configure keymap in X11
   services.xserver = {
