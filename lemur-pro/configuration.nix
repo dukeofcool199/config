@@ -29,8 +29,8 @@ in
   # Open ports in the firewall.
   networking.firewall = {
     trustedInterfaces = [ "vboxnet0" ];
-    enable = false;
-    allowPing = true;
+    enable = true;
+    allowPing = false;
   };
 
 
