@@ -110,7 +110,7 @@ in
  
   # List packages installed in system profile. To search, run:
   environment.systemPackages = with pkgs; [
-      firefox
+      (firefox.override {extraNativeMessagingHosts = [ passff-host ]; })
       chromium
 
       git
@@ -118,7 +118,9 @@ in
       git-annex-utils
       vim
       pass
+      qtpass
       neovim
+      vscode
 
       python3
 
