@@ -18,9 +18,14 @@ in
     ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.efi.efiSysMountPoint = "/boot/efi";
+  boot = {
+    loader = {
+      bsystemd-boot.enable = true;
+      befi.canTouchEfiVariables = true;
+      befi.efiSysMountPoint = "/boot/efi";
+    };
+    extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback ];
+  };
 
   networking.hostName = "skyberspace"; # Define your hostname.
 
