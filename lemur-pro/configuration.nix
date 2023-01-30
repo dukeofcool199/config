@@ -214,8 +214,6 @@ in
     magic-wormhole
 
     libreoffice
-    audacity
-    ardour
     gimp
     slic3r
     clamav
@@ -240,6 +238,11 @@ in
     asciiquarium
     qrencode
 
+    ardour
+    lsp-plugins
+    distrho
+    tap-plugins
+    noise-repellent
     direnv
     nix-direnv
 
@@ -317,6 +320,7 @@ in
   ];
   environment.variables = {
     XCURSOR_SIZE = "40";
+    LV2_PATH = "/run/current-system/sw/lib/lv2/";
   };
   # if you also want support for flakes
   nixpkgs.overlays = [
