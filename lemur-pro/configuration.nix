@@ -143,6 +143,8 @@ in
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
+    jack.enable = true;
+    audio.enable = true;
   };
 
   hardware.bluetooth.enable = false;
@@ -162,7 +164,7 @@ in
   users.users.jenkin = {
     isNormalUser = true;
     description = "jenkin Schibel";
-    extraGroups = [ "networkmanager" "wheel" "video" "adbusers" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "video" "adbusers" "docker" "jackaudio" ];
     shell = pkgs.zsh;
     initialHashedPassword = initialPassword;
   };
