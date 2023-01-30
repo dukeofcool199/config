@@ -27,16 +27,19 @@ in
     extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback ];
   };
 
-  networking.hostName = "skyberspace"; # Define your hostname.
+  networking = {
+    hostName = "skyberspace"; # Define your hostname.
 
-  # Enable networking
-  networking.networkmanager.enable = true;
+    # Enable networking
+    networkmanager.enable = true;
 
-  # Open ports in the firewall.
-  networking.firewall = {
-    trustedInterfaces = [ "vboxnet0" ];
-    enable = true;
-    allowPing = false;
+    # Open ports in the firewall.
+    firewall = {
+      trustedInterfaces = [ "vboxnet0" ];
+      enable = true;
+      allowPing = false;
+    };
+
   };
 
 
