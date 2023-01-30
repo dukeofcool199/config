@@ -238,11 +238,13 @@ in
     asciiquarium
     qrencode
 
+
     ardour
     lsp-plugins
     distrho
     tap-plugins
     noise-repellent
+
     direnv
     nix-direnv
 
