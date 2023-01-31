@@ -20,11 +20,15 @@ in
   # Bootloader.
   boot = {
     loader = {
-      bsystemd-boot.enable = true;
-      befi.canTouchEfiVariables = true;
-      befi.efiSysMountPoint = "/boot/efi";
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+      efi.efiSysMountPoint = "/boot/efi";
     };
-    extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback ];
+    extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback.out ];
+    kernelModules = [ "v4l2loopback" "snd-aloop" ];
+    extraModprobeConfig = ''
+      options v4l2loopback exclusive_caps=1 card_label="Virtual Camera"
+    '';
   };
 
   networking = {
@@ -228,7 +232,6 @@ in
     freecad
     spotify
     tdesktop
-    obs-studio
     blender
     openscad
     mpv
@@ -252,6 +255,9 @@ in
     distrho
     tap-plugins
     noise-repellent
+    (pkgs.wrapOBS {
+      plugins = with pkgs.obs-studio-plugins; [ obs-pipewire-audio-capture ];
+    })
 
     direnv
     nix-direnv
@@ -293,7 +299,9 @@ in
     tuxpaint
     superTux
     superTuxKart
-    (steam.override { withJava = true; })
+    (steam.override {
+      withJava = true;
+    })
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
