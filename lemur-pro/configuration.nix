@@ -210,6 +210,8 @@ in
     vim
     neovim
 
+    scrcpy
+
     python3
 
     kitty
