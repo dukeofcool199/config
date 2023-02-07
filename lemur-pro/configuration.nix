@@ -120,7 +120,6 @@ in
 
 
   # Enable the Cinnamon Desktop Environment.
-  # services.xserver.desktopManager.cinnamon.enable = true;
   services.xserver.windowManager.xmonad = {
     enable = true;
     enableContribAndExtras = true;
