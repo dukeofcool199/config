@@ -21,7 +21,7 @@ in
   boot = {
     loader = {
       systemd-boot.enable = true;
-      systemd-boot.configurationLimit = 30;
+      systemd-boot.configurationLimit = 42;
       efi.canTouchEfiVariables = true;
       efi.efiSysMountPoint = "/boot/efi";
     };
