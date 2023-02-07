@@ -175,7 +175,7 @@ in
   users.users.jenkin = {
     isNormalUser = true;
     description = "jenkin Schibel";
-    extraGroups = [ "networkmanager" "wheel" "video" "adbusers" "docker" "jackaudio" ];
+    extraGroups = [ "networkmanager" "wheel" "video" "adbusers" "docker" "jackaudio" "wireshark" ];
     shell = pkgs.zsh;
     initialHashedPassword = initialPassword;
   };
