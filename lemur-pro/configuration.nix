@@ -238,6 +238,7 @@ in
     mpv
     feh
     okular
+    gnome.simple-scan
     mupdf
     redshift
     brightnessctl
