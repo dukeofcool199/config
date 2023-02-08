@@ -208,6 +208,7 @@ in
     git
     git-annex
     vim
+    glow
     neovim
 
     scrcpy
