@@ -228,6 +228,7 @@ in
     magic-wormhole
 
     libreoffice
+    gthumb
     gimp
     slic3r
     clamav
