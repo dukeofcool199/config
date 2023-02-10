@@ -270,6 +270,7 @@ in
     nix-direnv
 
     dmenu
+    bottom
     rofi
     exa
     fzf
