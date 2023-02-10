@@ -102,6 +102,8 @@ in
 
   services.trezord.enable = true;
 
+  services.pcscd.enable = true;
+
   services.flatpak.enable = true;
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
@@ -295,6 +297,9 @@ in
     bluez
     blueman
     bluez-tools
+
+    pcsclite
+    pcsctools
 
     udiskie
     ntfs3g
