@@ -43,6 +43,7 @@ in
       trustedInterfaces = [ "vboxnet0" ];
       enable = true;
       allowPing = false;
+      allowedUDPPorts = [ 19240 3000 19241 ];
     };
 
   };
