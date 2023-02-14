@@ -285,6 +285,7 @@ in
 
     nil
     nixpkgs-fmt
+    nix-doc
 
     nodejs-16_x
 
@@ -343,6 +344,9 @@ in
     keep-derivations = true;
     experimental-features = [ "nix-command" "flakes" ];
   };
+  nix.extraOptions = ''
+    plugin-files = ${pkgs.nix-doc}/lib/libnix_doc_plugin.so
+  '';
 
   environment.pathsToLink = [
     "/share/nix-direnv"
@@ -351,6 +355,7 @@ in
     XCURSOR_SIZE = "40";
     LV2_PATH = "/run/current-system/sw/lib/lv2/";
   };
+
   # if you also want support for flakes
   nixpkgs.overlays = [
     (self: super: { nix-direnv = super.nix-direnv.override { enableFlakes = true; }; })
