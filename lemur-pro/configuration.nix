@@ -44,6 +44,7 @@ in
       enable = true;
       allowPing = false;
       allowedUDPPorts = [ 19240 3000 19241 ];
+      allowedTCPPorts = [ 21 ];
     };
 
   };
@@ -106,6 +107,13 @@ in
   services.pcscd.enable = true;
 
   services.flatpak.enable = true;
+  services.vsftpd = {
+    enable = true;
+    writeEnable = true;
+    localUsers = true;
+    userlist = [ "jenkin" ];
+    userlistEnable = true;
+  };
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
