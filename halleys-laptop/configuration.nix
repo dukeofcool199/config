@@ -9,14 +9,20 @@ let
 in
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.efi.efiSysMountPoint = "/boot/efi";
+  boot = {
+    loader = {
+      systemd-boot.enable = true;
+      systemd-boot.configurationLimit = 42;
+      efi.canTouchEfiVariables = true;
+      efi.efiSysMountPoint = "/boot/efi";
+    };
+  };
 
   networking.hostName = "HAL9000"; # Define your hostname.
 
@@ -25,7 +31,7 @@ in
 
   # Open ports in the firewall.
   networking.firewall = {
-   # allowedUDPPorts = [ 3000 19240 ];
+    allowedTCPPorts = [ 21 ];
     enable = true;
     allowPing = false;
   };
@@ -45,7 +51,7 @@ in
   services.udev.packages = with pkgs;[ zsa-udev-rules ];
 
   # services.xserver.desktopManager.cinnamon.enable = true;
-  
+
   services.xserver.desktopManager.plasma5.enable = true;
 
   # Configure keymap in X11
@@ -58,7 +64,7 @@ in
   services.printing.enable = true;
   services.avahi.enable = true;
   services.avahi.nssmdns = true;
-  services.avahi.openFirewall = true;  
+  services.avahi.openFirewall = true;
 
   # Enable sound with pipewire.
   sound.enable = true;
@@ -72,6 +78,14 @@ in
   };
 
   hardware.bluetooth.enable = true;
+
+  services.vsftpd = {
+    enable = true;
+    writeEnable = true;
+    localUsers = true;
+    userlist = [ "halley" ];
+    userlistEnable = true;
+  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.xserver.libinput = {
@@ -107,56 +121,54 @@ in
     };
   };
 
- 
+
   # List packages installed in system profile. To search, run:
   environment.systemPackages = with pkgs; [
-      (firefox.override {extraNativeMessagingHosts = [ passff-host ]; })
-      chromium
+    (firefox.override { extraNativeMessagingHosts = [ passff-host ]; })
+    chromium
 
-      git
-      git-annex
-      git-annex-utils
-      vim
-      pass
-      qtpass
-      neovim
-      vscode
+    git
+    git-annex
+    git-annex-utils
+    vim
+    pass
+    qtpass
+    neovim
+    vscode
 
-      python3
+    python3
 
-      tldr
-      wget
-      curl
-      file
-      xclip
-      flameshot
-      magic-wormhole
+    tldr
+    wget
+    curl
+    file
+    xclip
+    flameshot
+    magic-wormhole
 
-      libreoffice
-      spotify
-      mpv
-      feh
-      redshift
-      brightnessctl
-      xbindkeys
-      xbindkeys-config
-      zip
-      unzip
-      asciiquarium
+    libreoffice
+    spotify
+    mpv
+    feh
+    redshift
+    brightnessctl
+    xbindkeys
+    xbindkeys-config
+    zip
+    unzip
+    asciiquarium
 
-      direnv
-      nix-direnv
+    direnv
+    nix-direnv
 
-      dmenu
-      rofi
-      exa
-      fzf
-      steam-run
-      autorandr
+    dmenu
+    rofi
+    exa
+    fzf
+    autorandr
 
-      udiskie
-      ntfs3g
-      (steam.override { withJava = true; })
+    udiskie
+    ntfs3g
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -165,12 +177,6 @@ in
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
-  };
-
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true;
-    dedicatedServer.openFirewall = true;
   };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
