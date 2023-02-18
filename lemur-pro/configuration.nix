@@ -107,6 +107,7 @@ in
   services.pcscd.enable = true;
 
   services.flatpak.enable = true;
+
   services.vsftpd = {
     enable = true;
     writeEnable = true;
@@ -114,6 +115,7 @@ in
     userlist = [ "jenkin" ];
     userlistEnable = true;
   };
+
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
@@ -349,13 +351,14 @@ in
 
   # nix options for derivations to persist garbage collection
   nix.settings = {
-    keep-outputs = true;
-    keep-derivations = true;
+    keep-outputs = false;
+    keep-derivations = false;
     experimental-features = [ "nix-command" "flakes" ];
   };
   nix.extraOptions = ''
     plugin-files = ${pkgs.nix-doc}/lib/libnix_doc_plugin.so
   '';
+
 
   environment.pathsToLink = [
     "/share/nix-direnv"
