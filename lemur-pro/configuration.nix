@@ -224,6 +224,8 @@ in
     glow
     neovim
 
+    up
+
     scrcpy
 
     python3
