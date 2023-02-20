@@ -319,6 +319,12 @@ in
     udiskie
     ntfs3g
 
+    #email
+    alot
+    notmuch
+    offlineimap
+    protonmail-bridge
+
     #games
     tuxtype
     tuxpaint
