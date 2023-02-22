@@ -297,6 +297,7 @@ in
     autorandr
 
     nil
+    rnix-lsp
     nixpkgs-fmt
     nix-doc
 
