@@ -297,6 +297,7 @@ in
     autorandr
 
     nil
+    niv
     rnix-lsp
     nixpkgs-fmt
     nix-doc
@@ -331,6 +332,8 @@ in
     tuxpaint
     superTux
     superTuxKart
+    itch
+    exercism
     (steam.override {
       withJava = true;
     })
