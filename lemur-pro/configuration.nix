@@ -332,7 +332,6 @@ in
     tuxpaint
     superTux
     superTuxKart
-    itch
     exercism
     (steam.override {
       withJava = true;
