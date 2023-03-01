@@ -291,6 +291,7 @@ in
     delta
     ripgrep
     fd
+    ranger
     entr
     unclutter
     steam-run
