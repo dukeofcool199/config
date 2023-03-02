@@ -61,6 +61,25 @@ in
   services.autorandr = {
     enable = true;
     profiles = {
+      "dockedHdmi" = {
+        fingerprint = {
+          eDP-1 = laptopDisplay;
+          HDMI-1 = deskMonitorHdmi;
+        };
+        config = {
+          HDMI-1 = {
+            enable = true;
+            crtc = 0;
+            primary = true;
+            position = "0x0";
+            mode = "2560x1440";
+            rate = "144.00";
+          };
+          eDP-1 = {
+            enable = false;
+          };
+        };
+      };
       "docked" = {
         fingerprint = {
           eDP-1 = laptopDisplay;
@@ -74,25 +93,6 @@ in
             position = "0x0";
             mode = "2560x1440";
             rate = "59.95";
-          };
-          eDP-1 = {
-            enable = false;
-          };
-        };
-      };
-      "dockedHdmi" = {
-        fingerprint = {
-          eDP-1 = laptopDisplay;
-          HDMI-1 = deskMonitorHdmi;
-        };
-        config = {
-          HDMI-1 = {
-            enable = true;
-            crtc = 0;
-            primary = true;
-            position = "0x0";
-            mode = "2560x1440";
-            rate = "144";
           };
           eDP-1 = {
             enable = false;
