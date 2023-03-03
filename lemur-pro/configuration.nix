@@ -237,11 +237,13 @@ in
     firefox
     chromium
     brave
+    qutebrowser
     tor
     tor-browser-bundle-bin
 
     git
     git-annex
+    git-town
     vim
     glow
     neovim
