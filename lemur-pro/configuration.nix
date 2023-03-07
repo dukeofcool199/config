@@ -221,11 +221,15 @@ in
     config = {
       allowUnfree = true;
       allowBroken = true;
+      permittedInsecurePackages = [
+        "openjdk-18+36"
+      ];
       packageOverrides = pkgs: {
         steam = pkgs.steam.override {
-          extraPkgs = pkgs: with pkgs; [
-            libgdiplus
-          ];
+          extraPkgs = pkgs: with pkgs;
+            [
+              libgdiplus
+            ];
         };
       };
     };
@@ -293,6 +297,7 @@ in
     asciiquarium
     qrencode
 
+    jabref
     ardour
     lsp-plugins
     distrho
