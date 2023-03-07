@@ -320,6 +320,7 @@ in
     ripgrep
     fd
     ranger
+    rox-filer
     entr
     unclutter
     autorandr
