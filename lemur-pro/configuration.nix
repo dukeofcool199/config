@@ -361,6 +361,7 @@ in
     superTux
     superTuxKart
     exercism
+    minecraft
     steam-run
     (steam.override {
       withJava = true;
