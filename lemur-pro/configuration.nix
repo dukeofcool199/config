@@ -62,8 +62,10 @@ in
     enable = true;
     profiles = {
       "dockedHdmi" = {
+
         fingerprint = {
           HDMI-1 = deskMonitorHdmi;
+          eDP-1 = laptopDisplay;
         };
         config = {
           HDMI-1 = {
@@ -74,11 +76,15 @@ in
             mode = "2560x1440";
             rate = "144.00";
           };
+          eDP-1 = {
+            enable = false;
+          };
         };
       };
       "dockedUsbC" = {
         fingerprint = {
           DP-1 = deskMonitorUsbC;
+          eDP-1 = laptopDisplay;
         };
         config = {
           DP-1 = {
@@ -88,6 +94,9 @@ in
             position = "0x0";
             mode = "2560x1440";
             rate = "59.95";
+          };
+          eDP-1 = {
+            enable = false;
           };
         };
       };
