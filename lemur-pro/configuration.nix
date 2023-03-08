@@ -388,6 +388,7 @@ in
     keep-outputs = false;
     keep-derivations = false;
     experimental-features = [ "nix-command" "flakes" ];
+    trusted-users = [ "root" "jenkin" ];
   };
   nix.extraOptions = ''
     plugin-files = ${pkgs.nix-doc}/lib/libnix_doc_plugin.so
