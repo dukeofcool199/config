@@ -61,7 +61,7 @@ in
   services.autorandr = {
     enable = true;
     profiles = {
-      "hdmi" = {
+      "dockedHdmi" = {
         fingerprint = {
           HDMI-1 = deskMonitorHdmi;
         };
@@ -76,7 +76,7 @@ in
           };
         };
       };
-      "usbC" = {
+      "dockedUsbC" = {
         fingerprint = {
           DP-1 = deskMonitorUsbC;
         };
@@ -91,7 +91,7 @@ in
           };
         };
       };
-      "normal" = {
+      "laptopOnly" = {
         fingerprint = {
           eDP-1 = laptopDisplay;
         };
