@@ -235,6 +235,7 @@ in
     vim
     glow
     neovim
+    sysz
 
     up
 
