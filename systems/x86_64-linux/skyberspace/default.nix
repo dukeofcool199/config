@@ -14,29 +14,12 @@ in
 {
   imports =
     [
-      # Include the results of the hardware scan.
-      <nixos-hardware/system76>
-      ./hardware-configuration.nix
+      ./hardware.nix
     ];
 
-  # Bootloader.
-  boot = {
-    loader = {
-      systemd-boot.enable = true;
-      systemd-boot.configurationLimit = 42;
-      efi.canTouchEfiVariables = true;
-      efi.efiSysMountPoint = "/boot/efi";
-    };
-    extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback.out ];
-    kernelModules = [ "v4l2loopback" "snd-aloop" ];
-    extraModprobeConfig = ''
-      options v4l2loopback exclusive_caps=1 card_label="Virtual Camera"
-    '';
-  };
+
 
   networking = {
-    hostName = "skyberspace"; # Define your hostname.
-
     # Enable networking
     networkmanager.enable = true;
 

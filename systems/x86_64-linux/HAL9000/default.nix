@@ -24,8 +24,6 @@ in
     };
   };
 
-  networking.hostName = "HAL9000"; # Define your hostname.
-
   # Enable networking
   networking.networkmanager.enable = true;
 
