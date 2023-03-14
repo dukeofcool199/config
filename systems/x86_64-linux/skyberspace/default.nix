@@ -236,6 +236,7 @@ in
     glow
     neovim
     sysz
+    snowfallorg.flake
 
     up
 
