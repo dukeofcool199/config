@@ -298,6 +298,7 @@ in
 
     dmenu
     bottom
+    ncdu
     rofi
     exa
     fzf
