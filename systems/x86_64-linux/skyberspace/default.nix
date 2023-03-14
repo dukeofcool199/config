@@ -126,15 +126,32 @@ in
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
   #virtualisation stuff
-  virtualisation.virtualbox.host.enable = true;
-  virtualisation.virtualbox.host.enableExtensionPack = true;
-  virtualisation.virtualbox.guest.enable = true;
-  virtualisation.virtualbox.guest.x11 = true;
+  virtualisation = {
+    virtualbox = {
+      host = {
+        enable = true;
+        enableExtensionPack = true;
+      };
+      guest = {
+        enable = true;
+        x11 = true;
+      };
+    };
+    docker = {
+      enable = true;
+    };
+    podman = {
+      enable = true;
+      defaultNetwork = {
+        dnsname = {
+          enable = true;
+        };
+      };
+    };
+  };
+
   users.extraGroups.vboxusers.members = [ "jenkin" ];
 
-  virtualisation.docker = {
-    enable = true;
-  };
 
 
 
@@ -195,7 +212,7 @@ in
   users.users.jenkin = {
     isNormalUser = true;
     description = "jenkin Schibel";
-    extraGroups = [ "networkmanager" "wheel" "video" "adbusers" "docker" "jackaudio" "wireshark" ];
+    extraGroups = [ "networkmanager" "wheel" "video" "adbusers" "docker" "podman" "jackaudio" "wireshark" ];
     shell = pkgs.zsh;
     initialHashedPassword = initialPassword;
   };
@@ -283,6 +300,7 @@ in
     asciiquarium
     qrencode
 
+
     jabref
     ardour
     lsp-plugins
@@ -295,6 +313,7 @@ in
 
     direnv
     nix-direnv
+    arion
 
     dmenu
     bottom
