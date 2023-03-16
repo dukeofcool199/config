@@ -254,6 +254,7 @@ in
     neovim
     sysz
     inputs.snowFallFlake.packages.x86_64-linux.default
+    httpie
 
     up
 
