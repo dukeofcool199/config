@@ -340,6 +340,11 @@ in
 
     nodejs-16_x
 
+    #haskell
+    ghc
+    cabal-install
+    stack
+
     monero-cli
     monero-gui
     trezor-suite
