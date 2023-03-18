@@ -1,6 +1,8 @@
-
 *.qcow2
+result
 lemur-pro/result
 lemur-pro/skyberspace.qcow2
 .direnv
 result
+*.img
+*.zst
