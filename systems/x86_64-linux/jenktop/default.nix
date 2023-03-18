@@ -102,7 +102,6 @@ in
   };
 
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
 
   services.udisks2.enable = true;
 
@@ -157,18 +156,25 @@ in
 
 
   # Enable the Cinnamon Desktop Environment.
-  services.xserver.windowManager.xmonad = {
+  services.xserver = {
     enable = true;
-    enableContribAndExtras = true;
+    windowManager.xmonad = {
+      enable = true;
+      enableContribAndExtras = true;
+    };
+    layout = "us";
+    xkbVariant = "";
+    libinput = {
+      enable = true;
+      touchpad = {
+        tapping = true;
+      };
+    };
   };
 
 
 
   # Configure keymap in X11
-  services.xserver = {
-    layout = "us";
-    xkbVariant = "";
-  };
 
   # Enable CUPS to print documents.
   services.printing =
@@ -199,13 +205,6 @@ in
   services.blueman.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
-  services.xserver.libinput = {
-    enable = true;
-    touchpad = {
-      tapping = true;
-    };
-  };
-
   users.users.root.initialHashedPassword = initialPassword;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
