@@ -300,6 +300,10 @@ in
     asciiquarium
     qrencode
 
+    qemu_full
+    qemu-utils
+    qtemu
+
 
     jabref
     ardour
