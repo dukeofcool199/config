@@ -22,6 +22,9 @@
 
   outputs = inputs:
     inputs.snowfall-lib.mkFlake {
+
+      package-namespace = "jenkos";
+
       inherit inputs;
       src = ./.;
 

@@ -2,8 +2,9 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, lib, ... }:
 
+with lib;
 let
 
   initialPassword = "";
@@ -16,6 +17,15 @@ in
     [
       ./hardware.nix
     ];
+
+
+  jenkos = {
+    desktop = {
+      windowManager = {
+        xmonad = enabled;
+      };
+    };
+  };
 
 
 
@@ -155,13 +165,10 @@ in
 
 
 
+
   # Enable the Cinnamon Desktop Environment.
   services.xserver = {
     enable = true;
-    windowManager.xmonad = {
-      enable = true;
-      enableContribAndExtras = true;
-    };
     layout = "us";
     xkbVariant = "";
     libinput = {
