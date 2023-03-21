@@ -136,6 +136,11 @@ in
 
   #virtualisation stuff
   virtualisation = {
+    vmware = {
+      host = {
+        enable = true;
+      };
+    };
     virtualbox = {
       host = {
         enable = true;
