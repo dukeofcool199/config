@@ -25,6 +25,14 @@ in
         xmonad = enabled;
       };
     };
+    services = {
+      virtualisation = {
+        docker = true;
+        vmware = true;
+        virtualbox = true;
+
+      };
+    };
   };
 
 
@@ -134,42 +142,7 @@ in
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
-  #virtualisation stuff
-  virtualisation = {
-    vmware = {
-      host = {
-        enable = true;
-      };
-    };
-    virtualbox = {
-      host = {
-        enable = true;
-        enableExtensionPack = true;
-      };
-      guest = {
-        enable = true;
-        x11 = true;
-      };
-    };
-    docker = {
-      enable = true;
-    };
-    podman = {
-      enable = true;
-      defaultNetwork = {
-        dnsname = {
-          enable = true;
-        };
-      };
-    };
-  };
-
   users.extraGroups.vboxusers.members = [ "jenkin" ];
-
-
-
-
-
 
   # Enable the Cinnamon Desktop Environment.
   services.xserver = {
@@ -451,3 +424,4 @@ in
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "22.05"; # Did you read the comment?
 }
+
