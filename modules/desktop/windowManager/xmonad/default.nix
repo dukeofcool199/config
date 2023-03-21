@@ -1,12 +1,13 @@
 { options, config, lib, pkgs, ... }:
 
 with lib;
-let cfg = config.jenkos.desktop.windowManager.xmonad;
+let
+  cfg = config.jenkos.desktop.windowManager.xmonad;
 in
 {
   options.jenkos.desktop.windowManager.xmonad = with types; {
     enable =
-      mkBoolOpt false "Enables or disables xmonad using my configuration";
+      mkBoolOpt false "enable xmonad?";
   };
 
   config = mkIf cfg.enable {
