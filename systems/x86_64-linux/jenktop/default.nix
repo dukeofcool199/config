@@ -341,6 +341,7 @@ in
     entr
     unclutter
     autorandr
+    arandr
 
     nil
     niv
