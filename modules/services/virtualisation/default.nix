@@ -7,12 +7,14 @@ in
 {
   options.jenkos.services.virtualisation = with types; {
     docker = mkBoolOpt false "enable docker";
+    arion = mkBoolOpt false "enable arion for use with docker/podman";
     podman = mkBoolOpt false "enable podman";
     vmware = mkBoolOpt false "enable vmware";
     virtualbox = mkBoolOpt false "enable virtualbox";
   };
 
   config = {
+    environment.systemPackages = if cfg.arion then [ pkgs.arion ] else [ ];
     virtualisation = {
       vmware = {
         host = {

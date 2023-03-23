@@ -30,6 +30,7 @@ in
         docker = true;
         vmware = true;
         virtualbox = true;
+        arion = true;
 
       };
     };
