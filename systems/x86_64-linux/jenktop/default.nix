@@ -231,6 +231,7 @@ in
     tor-browser-bundle-bin
 
     git
+    gh
     git-annex
     git-town
     vim
