@@ -54,7 +54,7 @@
           {
             devShells.default = mkShell
               {
-                buildInputs = [ inputs.snowFallFlake.packages.x86_64-linux.default git-bug ];
+                buildInputs = [ inputs.snowFallFlake.packages.x86_64-linux.default git-bug git-appraise ];
               };
           });
     in
