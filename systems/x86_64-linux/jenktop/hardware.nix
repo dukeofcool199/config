@@ -6,6 +6,7 @@
 
 let
   inherit (inputs) nixos-hardware;
+  configurationLimit = 40;
 in
 {
 
@@ -25,10 +26,19 @@ in
     kernelModules = [ "kvm-intel" "v4l2loopback" "snd-aloop" ];
     extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback.out ];
     loader = {
-      systemd-boot.enable = true;
-      systemd-boot.configurationLimit = 42;
-      efi.canTouchEfiVariables = true;
-      efi.efiSysMountPoint = "/boot/efi";
+      grub = {
+        inherit configurationLimit;
+        enable = true;
+        devices = [ "nodev" ];
+      };
+      # systemd-boot = {
+      #   enable = true;
+      # inherit configurationLimit;
+      # };
+      efi = {
+        canTouchEfiVariables = true;
+        efiSysMountPoint = "/boot/efi";
+      };
     };
     extraModprobeConfig = ''
       options v4l2loopback exclusive_caps=1 card_label="Virtual Camera"
