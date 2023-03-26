@@ -33,6 +33,9 @@ in
         arion = true;
 
       };
+      ssh = {
+        openssh = enabled;
+      };
     };
   };
 
@@ -124,7 +127,9 @@ in
 
   services.udisks2.enable = true;
 
-  services.udev.packages = with pkgs;[ zsa-udev-rules ];
+
+  services.udev.packages = with pkgs;
+    [ zsa-udev-rules ];
 
   services.trezord.enable = true;
 
