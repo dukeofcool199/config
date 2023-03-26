@@ -350,6 +350,7 @@ in
     zoom-us
     discord
     element-desktop
+    weechat
 
     bluez
     blueman
