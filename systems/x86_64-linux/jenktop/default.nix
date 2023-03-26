@@ -345,8 +345,11 @@ in
     monero-gui
     trezor-suite
     exodus
+
+    #communication
     zoom-us
     discord
+    element-desktop
 
     bluez
     blueman
@@ -363,6 +366,7 @@ in
     notmuch
     offlineimap
     protonmail-bridge
+
 
     #games
     tuxtype
