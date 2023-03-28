@@ -12,5 +12,9 @@ with lib; rec {
 
   enabled = { enable = true; };
 
-  disabled = { enable = false; };
+  disabled = {
+    enable = false;
+  };
+
+  enable = true;
 }

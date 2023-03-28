@@ -11,10 +11,17 @@ in
     podman = mkBoolOpt false "enable podman";
     vmware = mkBoolOpt false "enable vmware";
     virtualbox = mkBoolOpt false "enable virtualbox";
+    vagrant = mkBoolOpt false "enable vagrant";
   };
 
   config = {
-    environment.systemPackages = if cfg.arion then [ pkgs.arion ] else [ ];
+    environment.systemPackages = (if cfg.arion then [
+      pkgs.arion
+    ] else [ ]) ++
+    (if cfg.vagrant then [
+      pkgs.vagrant
+    ] else [ ]);
+
     virtualisation = {
       vmware = {
         host = {

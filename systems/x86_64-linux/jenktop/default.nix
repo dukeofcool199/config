@@ -27,10 +27,11 @@ in
     };
     services = {
       virtualisation = {
-        docker = true;
-        vmware = true;
-        virtualbox = true;
-        arion = true;
+        docker = enable;
+        vmware = enable;
+        virtualbox = enable;
+        arion = enable;
+        vagrant = enable;
 
       };
       ssh = {
