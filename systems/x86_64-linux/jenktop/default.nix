@@ -313,6 +313,7 @@ in
 
     dmenu
     bottom
+    htop
     ncdu
     rofi
     exa
