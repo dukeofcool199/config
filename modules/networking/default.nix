@@ -3,7 +3,7 @@
 with lib;
 let
   cfg = config.jenkos.networking;
-  webPorts = optParams cfg.isFtpServer [ 80 443 ] [ ];
+  webPorts = optParams cfg.isWebServer [ 80 443 ] [ ];
 in
 {
   options.jenkos.networking = with types; {
