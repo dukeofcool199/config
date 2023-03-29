@@ -49,12 +49,15 @@
         (system:
           let
             pkgs = inputs.nixpkgs.legacyPackages.${system};
+            bugs = pkgs.writeShellScriptBin "bugs" ''
+              ${pkgs.git-bug}/bin/git-bug termui
+            '';
           in
           with pkgs;
           {
             devShells.default = mkShell
               {
-                buildInputs = [ inputs.snowFallFlake.packages.x86_64-linux.default git-bug git-appraise ];
+                buildInputs = [ inputs.snowFallFlake.packages.x86_64-linux.default git-bug git-appraise bugs ];
                 shellHook = ''git bug pull && git bug push'';
               };
           });
