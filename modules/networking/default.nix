@@ -9,6 +9,8 @@ in
   options.jenkos.networking = with types; {
     enable = mkBoolOpt false "enable networking?";
     isWebServer = mkBoolOpt false "is this for server applications?";
+    allowedTcpPorts = mkOpt (listOf str) [ ] "list of additional allowed TCP ports";
+    allowedUdpPorts = mkOpt (listOf str) [ ] "list of additional allowed UDP ports";
 
   };
 
@@ -19,7 +21,8 @@ in
         trustedInterfaces = [ "vboxnet0" ];
         enable = true;
         allowPing = false;
-        allowedTCPPorts = webPorts;
+        allowedTCPPorts = webPorts ++ cfg.allowedTcpPorts;
+        allowedUDPPorts = cfg.allowedUdpPorts;
       };
 
     };
