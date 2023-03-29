@@ -44,6 +44,7 @@ in
         enable = yes;
         users = [ "jenkin" ];
       };
+      avahi = enabled;
     };
   };
 
@@ -92,9 +93,6 @@ in
       startWhenNeeded = true;
     };
   services.system-config-printer.enable = true;
-  services.avahi.enable = true;
-  services.avahi.nssmdns = true;
-  services.avahi.openFirewall = true;
 
   # Enable sound with pipewire.
   security.rtkit.enable = true;
