@@ -44,6 +44,7 @@ in
         enable = yes;
         users = [ "jenkin" ];
       };
+      printing = enabled;
       avahi = enabled;
     };
   };
@@ -80,19 +81,6 @@ in
       };
     };
   };
-
-
-
-  # Configure keymap in X11
-
-  # Enable CUPS to print documents.
-  services.printing =
-    {
-      enable = true;
-      stateless = true;
-      startWhenNeeded = true;
-    };
-  services.system-config-printer.enable = true;
 
   # Enable sound with pipewire.
   security.rtkit.enable = true;
