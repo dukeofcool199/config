@@ -265,6 +265,7 @@ in
 
     #email
     alot
+    email
     notmuch
     offlineimap
     protonmail-bridge
