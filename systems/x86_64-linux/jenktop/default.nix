@@ -24,7 +24,6 @@ in
     };
     networking = {
       enable = yes;
-      isFtpServer = yes;
     };
     autorandr = {
       enable = yes;
@@ -40,6 +39,10 @@ in
       };
       ssh = {
         openssh = enabled;
+      };
+      sftp = {
+        enable = yes;
+        users = [ "jenkin" ];
       };
     };
   };
@@ -62,14 +65,6 @@ in
   services.pcscd.enable = true;
 
   services.flatpak.enable = true;
-
-  services.vsftpd = {
-    enable = true;
-    writeEnable = true;
-    localUsers = true;
-    userlist = [ "jenkin" ];
-    userlistEnable = true;
-  };
 
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
