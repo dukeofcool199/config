@@ -15,7 +15,6 @@ in
 
   config = mkIf cfg.enable {
     services.autorandr = {
-      enable = true;
       profiles = {
         "dockedHdmi" = {
 
