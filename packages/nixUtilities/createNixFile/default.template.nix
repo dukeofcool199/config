@@ -3,6 +3,9 @@
 with pkgs;
 mkDerivation {
 
+  name = "executable name";
+  pname = "derivation name";
+
   src = ./.;
 
   buildInputs = [ ];
