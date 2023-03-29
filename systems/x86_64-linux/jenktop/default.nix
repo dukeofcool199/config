@@ -234,6 +234,7 @@ in
     rnix-lsp
     nixpkgs-fmt
     nix-doc
+    createNixFile
 
     nodejs-16_x
 
