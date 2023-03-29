@@ -25,6 +25,10 @@ in
         xmonad = enabled;
       };
     };
+    networking = {
+      enable = true;
+      isFtpServer = true;
+    };
     services = {
       virtualisation = {
         docker = enable;
@@ -32,31 +36,12 @@ in
         virtualbox = enable;
         arion = enable;
         vagrant = enable;
-
       };
       ssh = {
         openssh = enabled;
       };
     };
   };
-
-
-
-  networking = {
-    # Enable networking
-    networkmanager.enable = true;
-
-    # Open ports in the firewall.
-    firewall = {
-      trustedInterfaces = [ "vboxnet0" ];
-      enable = true;
-      allowPing = false;
-      allowedUDPPorts = [ 19240 3000 19241 ];
-      allowedTCPPorts = [ 21 ];
-    };
-
-  };
-
 
   # Set your time zone.
   time.timeZone = "America/Los_Angeles";
