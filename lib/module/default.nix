@@ -16,5 +16,9 @@ with lib; rec {
     enable = false;
   };
 
+  optParams = pred: yes: no: if pred then yes else no;
+
   enable = true;
+  yes = true;
+  no = false;
 }
