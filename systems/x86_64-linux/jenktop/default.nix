@@ -23,10 +23,11 @@ in
       };
     };
     networking = {
-      enable = true;
-      isFtpServer = true;
+      enable = yes;
+      isFtpServer = yes;
     };
     autorandr = {
+      enable = yes;
       jenkinDesk = enabled;
     };
     services = {

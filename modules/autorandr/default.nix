@@ -6,13 +6,12 @@ let
 in
 {
   options.jenkos.autorandr = with types; {
-    enable =
-      mkBoolOpt false "enable autorandr?";
+    enable = mkBoolOpt no "enable autorandr?";
   };
 
   config = mkIf cfg.enable {
     services.autorandr = {
-      enable = true;
+      enable = yes;
     };
   };
 }
