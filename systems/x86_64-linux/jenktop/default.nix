@@ -64,9 +64,6 @@ in
 
   services.trezord.enable = true;
 
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-
   users.extraGroups.vboxusers.members = [ "jenkin" ];
 
   # Enable the Cinnamon Desktop Environment.
