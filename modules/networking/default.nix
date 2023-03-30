@@ -7,7 +7,8 @@ let
 in
 {
   options.jenkos.networking = with types; {
-    enable = mkBoolOpt false "enable networking?";
+    enable = mkBoolOpt true "enable networking?";
+    enableFirewall = mkBoolOpt true "enable firewall?";
     isWebServer = mkBoolOpt false "is this for server applications?";
     allowedTcpPorts = mkOpt (listOf str) [ ] "list of additional allowed TCP ports";
     allowedUdpPorts = mkOpt (listOf str) [ ] "list of additional allowed UDP ports";
@@ -19,7 +20,7 @@ in
       networkmanager.enable = true;
       firewall = {
         trustedInterfaces = [ "vboxnet0" ];
-        enable = true;
+        enable = cfg.enableFirewall;
         allowPing = false;
         allowedTCPPorts = webPorts ++ cfg.allowedTcpPorts;
         allowedUDPPorts = cfg.allowedUdpPorts;
