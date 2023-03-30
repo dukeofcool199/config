@@ -16,7 +16,7 @@ in
       windowManager.xmonad = {
         enable = true;
         enableContribAndExtras = true;
-        config = ./xmonad.hs;
+        # config = ./xmonad.hs;
       };
       layout = "us";
       xkbVariant = "";
