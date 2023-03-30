@@ -131,8 +131,8 @@ in
   environment.systemPackages = with pkgs; [
     firefox
     chromium
+    browsh
     brave
-    qutebrowser
     tor
     tor-browser-bundle-bin
 

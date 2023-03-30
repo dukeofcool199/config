@@ -88,7 +88,8 @@ main = do
           logHook = composeAll [updatePointer (0.5, 0.5) (0, 0)]
         }
       `additionalKeys` [ ((mo, xK_b), spawn "brave"),
-                         ((moc, xK_b), spawn "kitty -e lynx"),
+                         ((mosh, xK_b), spawn "chromium"),
+                         ((moc, xK_b), spawn "kitty -e browsh"),
                          ((mosh, xK_b), spawn "librewolf"),
                          ((mod1Mask, xK_c), spawn "kitty"),
                          ((moc, xK_c), spawn "st"),
