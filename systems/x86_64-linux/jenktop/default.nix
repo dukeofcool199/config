@@ -252,6 +252,7 @@ in
     zoom-us
     discord
     element-desktop
+    workchat
     weechat
 
     bluez
