@@ -33,8 +33,10 @@ in
         docker = enable;
         vmware = enable;
         virtualbox = enable;
+        virtualboxUsers = [ "jenkin" ];
         arion = enable;
         vagrant = enable;
+
       };
       ssh = {
         openssh = enabled;
@@ -62,11 +64,6 @@ in
   # Enable the X11 windowing system.
 
   services.udisks2.enable = true;
-
-
-  services.udev.packages = with pkgs;
-    [ zsa-udev-rules ];
-
 
   users.extraGroups.vboxusers.members = [ "jenkin" ];
 

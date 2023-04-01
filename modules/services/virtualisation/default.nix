@@ -12,6 +12,7 @@ in
     vmware = mkBoolOpt false "enable vmware";
     virtualbox = mkBoolOpt false "enable virtualbox";
     vagrant = mkBoolOpt false "enable vagrant";
+    virtualboxUsers = mkOpt (listOf str) [ ] "users to be added to virtualbox";
   };
 
   config = {
@@ -50,6 +51,8 @@ in
         };
       };
     };
+
+    users.extraGroups.vboxusers.members = [ "jenkin" ];
 
   };
 }
