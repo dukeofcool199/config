@@ -36,9 +36,6 @@ in
         arion = enable;
         vagrant = enable;
       };
-      hardware = {
-        zsa = enabled;
-      };
       ssh = {
         openssh = enabled;
       };
@@ -48,6 +45,12 @@ in
       };
       printing = enabled;
       avahi = enabled;
+    };
+    hardware = {
+      zsa = enabled;
+    };
+    utilities = {
+      crypto = enabled;
     };
   };
 
@@ -64,7 +67,6 @@ in
   services.udev.packages = with pkgs;
     [ zsa-udev-rules ];
 
-  services.trezord.enable = true;
 
   users.extraGroups.vboxusers.members = [ "jenkin" ];
 
@@ -244,11 +246,6 @@ in
     ghc
     cabal-install
     stack
-
-    monero-cli
-    monero-gui
-    trezor-suite
-    exodus
 
     #communication
     zoom-us
