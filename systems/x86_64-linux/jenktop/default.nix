@@ -1,19 +1,8 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, inputs, lib, ... }:
 
 with lib;
-let
-
-  initialPassword = "";
-in
 {
-  imports = [
-    ./hardware.nix
-  ];
-
+  imports = [ ./hardware.nix ];
 
   jenkos = {
     desktop = {
@@ -32,11 +21,12 @@ in
       virtualisation = {
         docker = enable;
         vmware = enable;
+
         virtualbox = enable;
         virtualboxUsers = [ "jenkin" ];
+
         arion = enable;
         vagrant = enable;
-
       };
       ssh = {
         openssh = enabled;
@@ -66,16 +56,12 @@ in
   services.udisks2.enable = true;
 
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  users.users.root.initialHashedPassword = initialPassword;
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.jenkin = {
     isNormalUser = true;
     description = "jenkin Schibel";
-    extraGroups = [ "networkmanager" "wheel" "video" "adbusers" "docker" "podman" "jackaudio" "wireshark" ];
+    extraGroups = [ "networkmanager" "wheel" "video" "adbusers" "docker" "podman" "jackaudio" ];
     shell = pkgs.zsh;
-    initialHashedPassword = initialPassword;
   };
 
 
@@ -108,24 +94,21 @@ in
     tor-browser-bundle-bin
 
     git
+    delta
     gh
     git-annex
     git-town
     vim
     glow
     neovim
-    sysz
     inputs.snowFallFlake.packages.x86_64-linux.default
     httpie
 
     up
 
-    scrcpy
-
     python3
 
     kitty
-    xterm
 
     tldr
     wget
@@ -141,8 +124,6 @@ in
     gthumb
     gimp
     slic3r
-    clamav
-    freecad
     spotify
     tdesktop
     blender
@@ -167,8 +148,6 @@ in
     qemu-utils
     qtemu
 
-
-    jabref
     ardour
     lsp-plugins
     distrho
@@ -180,29 +159,24 @@ in
 
     direnv
     nix-direnv
-    arion
 
     dmenu
-    bottom
     htop
     ncdu
     rofi
     exa
     fzf
     lazygit
-    delta
     ripgrep
     fd
     ranger
     rox-filer
     entr
     unclutter
-    autorandr
     arandr
 
     nil
-    niv
-    rnix-lsp
+    alejandra
     nixpkgs-fmt
     nix-doc
     createNixFile
@@ -220,9 +194,6 @@ in
     element-desktop
     workchat
     weechat
-
-    pcsclite
-    pcsctools
 
     udiskie
     ntfs3g
@@ -267,7 +238,6 @@ in
 
   programs.adb.enable = true;
 
-
   programs.java.enable = true;
 
   # nix options for derivations to persist garbage collection
@@ -277,6 +247,7 @@ in
     experimental-features = [ "nix-command" "flakes" ];
     trusted-users = [ "root" "jenkin" ];
   };
+
   nix.extraOptions = ''
     plugin-files = ${pkgs.nix-doc}/lib/libnix_doc_plugin.so
   '';
