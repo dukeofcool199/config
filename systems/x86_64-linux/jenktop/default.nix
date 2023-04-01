@@ -10,10 +10,9 @@ let
   initialPassword = "";
 in
 {
-  imports =
-    [
-      ./hardware.nix
-    ];
+  imports = [
+    ./hardware.nix
+  ];
 
 
   jenkos = {
@@ -36,6 +35,9 @@ in
         virtualbox = enable;
         arion = enable;
         vagrant = enable;
+      };
+      hardware = {
+        zsa = enabled;
       };
       ssh = {
         openssh = enabled;
