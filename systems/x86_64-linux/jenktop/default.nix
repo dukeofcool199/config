@@ -65,11 +65,6 @@ in
 
   services.udisks2.enable = true;
 
-  users.extraGroups.vboxusers.members = [ "jenkin" ];
-
-
-  hardware.bluetooth.enable = false;
-  services.blueman.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   users.users.root.initialHashedPassword = initialPassword;
@@ -225,10 +220,6 @@ in
     element-desktop
     workchat
     weechat
-
-    bluez
-    blueman
-    bluez-tools
 
     pcsclite
     pcsctools
