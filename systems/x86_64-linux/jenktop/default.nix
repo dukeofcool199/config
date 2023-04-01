@@ -62,24 +62,10 @@ in
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.utf8";
-  # Enable the X11 windowing system.
 
   services.udisks2.enable = true;
 
   users.extraGroups.vboxusers.members = [ "jenkin" ];
-
-  # Enable the Cinnamon Desktop Environment.
-  services.xserver = {
-    enable = true;
-    layout = "us";
-    xkbVariant = "";
-    libinput = {
-      enable = true;
-      touchpad = {
-        tapping = true;
-      };
-    };
-  };
 
 
   hardware.bluetooth.enable = false;
