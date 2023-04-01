@@ -259,6 +259,7 @@ with lib;
     XCURSOR_SIZE = "40";
     LV2_PATH = "/run/current-system/sw/lib/lv2/";
   };
+  environment.shells = [ pkgs.bashInteractive pkgs.zsh ];
 
   # if you also want support for flakes
   nixpkgs.overlays = [
