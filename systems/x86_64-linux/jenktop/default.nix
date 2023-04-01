@@ -1,13 +1,22 @@
 { config, pkgs, inputs, lib, ... }:
-
 with lib;
 {
   imports = [ ./hardware.nix ];
 
   jenkos = {
+    system = {
+      nix = enabled;
+      time = enabled;
+      localisation = enabled;
+      environment = enabled;
+    };
     desktop = {
-      windowManager = {
-        xmonad = enabled;
+      xorg = {
+        basicConfigs = yes;
+        windowManager = {
+          xmonad = enabled;
+        };
+        utilities = enabled;
       };
     };
     networking = {
@@ -19,14 +28,14 @@ with lib;
     };
     services = {
       virtualisation = {
-        docker = enable;
-        vmware = enable;
+        docker = yes;
+        vmware = yes;
 
-        virtualbox = enable;
+        virtualbox = yes;
         virtualboxUsers = [ "jenkin" ];
 
-        arion = enable;
-        vagrant = enable;
+        arion = yes;
+        vagrant = yes;
       };
       ssh = {
         openssh = enabled;
@@ -37,225 +46,69 @@ with lib;
       };
       printing = enabled;
       avahi = enabled;
+      gpg = enabled;
+      udisks = enabled;
+      pass = enabled;
+      kdeconnect = enabled;
     };
     hardware = {
       zsa = enabled;
       audio = enabled;
     };
+    apps = {
+      ardour = enabled;
+      obs = enabled;
+    };
+    gaming = {
+      steam = enabled;
+    };
+    developer = {
+      git = {
+        enable = yes;
+        github = yes;
+      };
+      vim = enabled;
+      python = enabled;
+      nodejs = enabled;
+      haskell = enabled;
+      nix = enabled;
+      training = enabled;
+      android = enabled;
+      java = enabled;
+    };
+    users = {
+      jenkin = enabled;
+    };
     utilities = {
       crypto = enabled;
-    };
-  };
-
-  # Set your time zone.
-  time.timeZone = "America/Los_Angeles";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.utf8";
-
-  services.udisks2.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.jenkin = {
-    isNormalUser = true;
-    description = "jenkin Schibel";
-    extraGroups = [ "networkmanager" "wheel" "video" "adbusers" "docker" "podman" "jackaudio" ];
-    shell = pkgs.zsh;
-  };
-
-
-  nixpkgs = {
-    config = {
-      allowUnfree = true;
-      packageOverrides = pkgs: {
-        steam = pkgs.steam.override {
-          extraPkgs = pkgs: with pkgs;
-            [
-              libgdiplus
-            ];
-        };
+      networking = enabled;
+      office = enabled;
+      browsing = {
+        graphical = yes;
+        cli = yes;
+        tor = yes;
       };
+      audio = {
+        cli = yes;
+        tui = yes;
+      };
+      filemanager = {
+        gui = yes;
+        tui = yes;
+      };
+      art = enabled;
+      shelltools = enabled;
+      media = enabled;
+      chat = enabled;
+      sysadmin = enabled;
+      email = enabled;
+      filecopy = enabled;
+      threeDprinting = enabled;
+      pdf = enabled;
+      screenshot = enabled;
+      slock = enabled;
     };
   };
-
-
-  # List packages installed in system profile. To search, run:
-  environment.systemPackages = with pkgs; [
-    firefox
-    chromium
-    browsh
-    brave
-    tor
-    tor-browser-bundle-bin
-
-    git
-    delta
-    gh
-    git-annex
-    git-town
-    vim
-    glow
-    neovim
-    inputs.snowFallFlake.packages.x86_64-linux.default
-    httpie
-
-    up
-
-    python3
-
-    kitty
-
-    tldr
-    wget
-    curl
-    pass
-    polybarFull
-    file
-    xclip
-    flameshot
-    magic-wormhole
-
-    libreoffice
-    gthumb
-    gimp
-    slic3r
-    spotify
-    tdesktop
-    blender
-    openscad
-    mpv
-    feh
-    okular
-    gnome.simple-scan
-    mupdf
-    redshift
-    brightnessctl
-    pulsemixer
-    pulseaudio-ctl
-    xbindkeys
-    xbindkeys-config
-    zip
-    unzip
-    asciiquarium
-    qrencode
-
-    qemu_full
-    qemu-utils
-    qtemu
-
-    ardour
-    lsp-plugins
-    distrho
-    tap-plugins
-    noise-repellent
-    (pkgs.wrapOBS {
-      plugins = with pkgs.obs-studio-plugins; [ obs-pipewire-audio-capture ];
-    })
-
-    direnv
-    nix-direnv
-
-    dmenu
-    htop
-    ncdu
-    rofi
-    exa
-    fzf
-    lazygit
-    ripgrep
-    fd
-    ranger
-    rox-filer
-    entr
-    unclutter
-    arandr
-
-    nil
-    alejandra
-    nixpkgs-fmt
-    nix-doc
-    createNixFile
-
-    nodejs-16_x
-
-    #haskell
-    ghc
-    cabal-install
-    stack
-
-    #communication
-    zoom-us
-    discord
-    element-desktop
-    workchat
-    weechat
-
-    udiskie
-    ntfs3g
-
-    #email
-    alot
-    email
-    notmuch
-    offlineimap
-    protonmail-bridge
-
-
-    #games
-    tuxtype
-    tuxpaint
-    superTux
-    superTuxKart
-    exercism
-    minecraft
-    steam-run
-  ];
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
-  };
-  programs.slock.enable = true;
-
-  programs.kdeconnect.enable = true;
-
-  programs.steam = {
-    enable = true;
-    dedicatedServer.openFirewall = true;
-    package = (steam.override {
-      withJava = true;
-    });
-    remotePlay.openFirewall = true;
-  };
-
-  programs.adb.enable = true;
-
-  programs.java.enable = true;
-
-  # nix options for derivations to persist garbage collection
-  nix.settings = {
-    experimental-features = [ "nix-command" "flakes" ];
-    trusted-users = [ "@wheel" ];
-  };
-
-  environment.pathsToLink = [
-    "/share/nix-direnv"
-  ];
-
-  environment.variables = {
-    XCURSOR_SIZE = "40";
-    LV2_PATH = "/run/current-system/sw/lib/lv2/";
-  };
-
-  environment.shells = [ pkgs.bashInteractive pkgs.zsh ];
-
-  # if you also want support for flakes
-  nixpkgs.overlays = [
-    (self: super: { nix-direnv = super.nix-direnv.override { enableFlakes = true; }; })
-  ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

@@ -24,26 +24,17 @@ in
 
     };
     kernelModules = [ "kvm-intel" "v4l2loopback" "snd-aloop" ];
-    extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback.out ];
     loader = {
       grub = {
         inherit configurationLimit;
         enable = true;
         devices = [ "nodev" ];
       };
-      # systemd-boot = {
-      #   enable = true;
-      # inherit configurationLimit;
-      # };
       efi = {
         canTouchEfiVariables = true;
         efiSysMountPoint = "/boot/efi";
       };
     };
-    extraModprobeConfig = ''
-      options v4l2loopback exclusive_caps=1 card_label="Virtual Camera"
-    '';
-    binfmt.emulatedSystems = [ "aarch64-linux" ];
 
   };
 

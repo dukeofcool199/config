@@ -2,10 +2,10 @@
 
 with lib;
 let
-  cfg = config.jenkos.desktop.windowManager.xmonad;
+  cfg = config.jenkos.desktop.xorg.windowManager.xmonad;
 in
 {
-  options.jenkos.desktop.windowManager.xmonad = with types; {
+  options.jenkos.desktop.xorg.windowManager.xmonad = with types; {
     enable =
       mkBoolOpt false "enable xmonad?";
   };
