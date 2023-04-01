@@ -52,7 +52,7 @@ in
       };
     };
 
-    users.extraGroups.vboxusers.members = [ "jenkin" ];
+    users.extraGroups.vboxusers.members = cfg.virtualboxUsers;
 
   };
 }
