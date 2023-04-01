@@ -55,7 +55,6 @@ with lib;
 
   services.udisks2.enable = true;
 
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.jenkin = {
     isNormalUser = true;
@@ -68,10 +67,6 @@ with lib;
   nixpkgs = {
     config = {
       allowUnfree = true;
-      allowBroken = true;
-      permittedInsecurePackages = [
-        "openjdk-18+36"
-      ];
       packageOverrides = pkgs: {
         steam = pkgs.steam.override {
           extraPkgs = pkgs: with pkgs;
@@ -214,9 +209,6 @@ with lib;
     exercism
     minecraft
     steam-run
-    (steam.override {
-      withJava = true;
-    })
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -232,8 +224,11 @@ with lib;
 
   programs.steam = {
     enable = true;
-    remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
+    package = (steam.override {
+      withJava = true;
+    });
+    remotePlay.openFirewall = true;
   };
 
   programs.adb.enable = true;
@@ -242,23 +237,19 @@ with lib;
 
   # nix options for derivations to persist garbage collection
   nix.settings = {
-    keep-outputs = false;
-    keep-derivations = false;
     experimental-features = [ "nix-command" "flakes" ];
-    trusted-users = [ "root" "jenkin" ];
+    trusted-users = [ "@wheel" ];
   };
-
-  nix.extraOptions = ''
-    plugin-files = ${pkgs.nix-doc}/lib/libnix_doc_plugin.so
-  '';
 
   environment.pathsToLink = [
     "/share/nix-direnv"
   ];
+
   environment.variables = {
     XCURSOR_SIZE = "40";
     LV2_PATH = "/run/current-system/sw/lib/lv2/";
   };
+
   environment.shells = [ pkgs.bashInteractive pkgs.zsh ];
 
   # if you also want support for flakes
