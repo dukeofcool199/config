@@ -2,17 +2,35 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 let
   initialPassword = "";
 in
+with lib;
 {
   imports =
     [
       # Include the results of the hardware scan.
       ./hardware.nix
     ];
+
+  jenkos = {
+    system = {
+      nix = enabled;
+      time = enabled;
+      localisation = enabled;
+      environment = enabled;
+    };
+    networking = {
+      enable = yes;
+    };
+    services = {
+      ssh = {
+        openssh = enabled;
+      };
+    };
+  };
 
   # Bootloader.
   boot = {
