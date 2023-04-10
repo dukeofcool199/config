@@ -36,6 +36,7 @@ with lib;
 
         arion = yes;
         vagrant = yes;
+        qemu = yes;
       };
       ssh = {
         openssh = enabled;
