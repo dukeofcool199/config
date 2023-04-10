@@ -21,7 +21,8 @@ in
       zip
       unzip
       exa
-      ncdu
+      du-dust
+      duf
       fzf
       ripgrep
       entr
