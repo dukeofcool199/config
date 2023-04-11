@@ -110,6 +110,8 @@ with lib;
     };
   };
 
+  nix.settings.trusted-users = [ "jenkin" ];
+
   environment.systemPackages = with pkgs;
     [
       email
