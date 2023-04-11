@@ -6,7 +6,6 @@
 
 let
   inherit (inputs) nixos-hardware;
-  configurationLimit = 40;
 in
 {
 
@@ -23,18 +22,8 @@ in
       kernelModules = [ ];
 
     };
+    loader.efi.efiSysMountPoint = "/boot/efi";
     kernelModules = [ "kvm-intel" "v4l2loopback" "snd-aloop" ];
-    loader = {
-      grub = {
-        inherit configurationLimit;
-        enable = true;
-        devices = [ "nodev" ];
-      };
-      efi = {
-        canTouchEfiVariables = true;
-        efiSysMountPoint = "/boot/efi";
-      };
-    };
 
   };
 

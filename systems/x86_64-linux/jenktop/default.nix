@@ -9,6 +9,7 @@ with lib;
       time = enabled;
       localisation = enabled;
       environment = enabled;
+      boot = enabled;
     };
     desktop = {
       xorg = {
@@ -36,7 +37,6 @@ with lib;
 
         arion = yes;
         vagrant = yes;
-        qemu = yes;
       };
       ssh = {
         openssh = enabled;
