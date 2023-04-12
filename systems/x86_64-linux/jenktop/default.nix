@@ -105,6 +105,7 @@ with lib;
       email = enabled;
       filecopy = enabled;
       threeDprinting = enabled;
+      threeDModeling = enabled;
       pdf = enabled;
       screenshot = enabled;
       slock = enabled;

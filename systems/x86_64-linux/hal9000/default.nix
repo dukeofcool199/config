@@ -30,6 +30,10 @@ with lib;
         openssh = enabled;
       };
     };
+
+    utilities = {
+      threeDModeling = enabled;
+    };
   };
 
   # Bootloader.
