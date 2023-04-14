@@ -30,6 +30,7 @@ with lib;
     services = {
       virtualisation = {
         docker = yes;
+        docker-rootless = yes;
         vmware = yes;
 
         virtualbox = yes;
