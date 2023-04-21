@@ -56,6 +56,7 @@ with lib;
     hardware = {
       zsa = enabled;
       audio = enabled;
+      bluetooth = enabled;
     };
     apps = {
       ardour = enabled;
