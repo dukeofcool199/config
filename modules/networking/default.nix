@@ -10,8 +10,8 @@ in
     enable = mkBoolOpt true "enable networking?";
     enableFirewall = mkBoolOpt true "enable firewall?";
     isWebServer = mkBoolOpt false "is this for server applications?";
-    allowedTcpPorts = mkOpt (listOf str) [ ] "list of additional allowed TCP ports";
-    allowedUdpPorts = mkOpt (listOf str) [ ] "list of additional allowed UDP ports";
+    allowedTcpPorts = mkOpt (listOf number) [ ] "list of additional allowed TCP ports";
+    allowedUdpPorts = mkOpt (listOf number) [ ] "list of additional allowed UDP ports";
 
   };
 

@@ -22,6 +22,7 @@ with lib;
     };
     networking = {
       enable = yes;
+      allowedTcpPorts = [ 8081 8082 8080 5000 ];
     };
     autorandr = {
       enable = yes;
