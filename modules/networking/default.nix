@@ -16,6 +16,13 @@ in
   };
 
   config = mkIf cfg.enable {
+
+    jenkos = {
+      utilities = {
+        networking = enabled;
+      };
+    };
+
     networking = {
       networkmanager.enable = true;
       firewall = {

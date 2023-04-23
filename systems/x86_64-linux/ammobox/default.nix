@@ -1,7 +1,7 @@
 { config, pkgs, inputs, lib, ... }:
 with lib;
 {
-  imports = [ ./hardware.nix ];
+  # //TODO: hardware stuff when nixos is installed
 
   jenkos = {
     system = {
@@ -22,7 +22,6 @@ with lib;
     };
     networking = {
       enable = yes;
-      allowedTcpPorts = [ 8081 8082 8080 5000 ];
     };
     autorandr = {
       enable = yes;
@@ -32,13 +31,9 @@ with lib;
       virtualisation = {
         docker = yes;
         docker-rootless = yes;
-        vmware = yes;
 
         virtualbox = yes;
         virtualboxUsers = [ "jenkin" ];
-
-        arion = yes;
-        vagrant = yes;
       };
       ssh = {
         openssh = enabled;
@@ -105,7 +100,6 @@ with lib;
       media = enabled;
       chat = enabled;
       sysadmin = enabled;
-      email = enabled;
       filecopy = enabled;
       threeDprinting = enabled;
       threeDModeling = enabled;
@@ -116,8 +110,6 @@ with lib;
   };
 
   # //TODO: fix this so email is in email module probably with an overlay
-  nix.settings.trusted-users = [ "jenkin" ];
-
   environment.systemPackages = with pkgs;
     [
       email
