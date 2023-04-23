@@ -207,6 +207,7 @@
         "nixpkgs": "nixpkgs",
         "snowFallFlake": "snowFallFlake",
         "snowfall-lib": "snowfall-lib_2",
+        "tunerstudio": "tunerstudio",
         "unstable": "unstable_2"
       }
     },
@@ -292,6 +293,18 @@
         "owner": "nix-systems",
         "repo": "default",
         "type": "github"
+      }
+    },
+    "tunerstudio": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-+heDrvFTqX409P4Gct3TvNkleqDzArViGUovVB2w8Y4=",
+        "type": "tarball",
+        "url": "https://www.tunerstudio.com/downloads2/TunerStudioMS_v3.1.08.tar.gz"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://www.tunerstudio.com/downloads2/TunerStudioMS_v3.1.08.tar.gz"
       }
     },
     "unstable": {

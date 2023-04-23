@@ -13,6 +13,11 @@
 
     flake-utils.url = "github:numtide/flake-utils";
 
+    tunerstudio = {
+      url = "https://www.tunerstudio.com/downloads2/TunerStudioMS_v3.1.08.tar.gz";
+      flake = false;
+    };
+
 
     snowFallFlake.url = "github:snowfallorg/flake";
     snowFallFlake.inputs.nixpkgs.follows = "unstable";
