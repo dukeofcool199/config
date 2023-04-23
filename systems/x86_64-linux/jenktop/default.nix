@@ -71,6 +71,9 @@ with lib;
         enable = yes;
         github = yes;
       };
+      embedded = {
+        car = enabled;
+      };
       vim = enabled;
       python = enabled;
       nodejs = enabled;
