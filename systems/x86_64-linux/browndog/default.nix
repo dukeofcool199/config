@@ -1,7 +1,7 @@
 { config, pkgs, inputs, lib, ... }:
 with lib;
 {
-  # imports = [ ./hardware.nix ];
+  imports = [ ./hardware.nix ];
 
   jenkos = {
     system = {
