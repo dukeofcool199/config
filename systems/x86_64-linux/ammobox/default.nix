@@ -2,6 +2,7 @@
 with lib;
 {
   # //TODO: hardware stuff when nixos is installed
+  imports = [ ./hardware.nix ];
 
   jenkos = {
     system = {
