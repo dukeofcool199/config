@@ -17,7 +17,7 @@ in
       nix-doc
       createNixFile
       direnv
-      nix-direnv
+      inputs.nix-direnv
       inputs.snowFallFlake.packages.x86_64-linux.default
     ];
     environment.pathsToLink = [

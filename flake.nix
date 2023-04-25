@@ -5,6 +5,8 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-22.11";
     unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    nix-direnv.url = "github:nix-community/nix-direnv";
+
     nixos-hardware.url = "github:nixos/nixos-hardware";
 
     nixos-generators.url =
