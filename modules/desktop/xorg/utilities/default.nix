@@ -20,6 +20,7 @@ in
       rofi
       unclutter
       xclip
+      xrandr-invert-colors
     ];
   };
 }
