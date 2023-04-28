@@ -46,6 +46,7 @@ with lib;
     };
     users = {
       jenkin = enabled;
+      git-annex = enabled;
     };
     utilities = {
       networking = enabled;
