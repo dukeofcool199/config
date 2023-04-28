@@ -13,6 +13,7 @@ in
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
       git
+      tea
       delta
       git-annex
       git-town
