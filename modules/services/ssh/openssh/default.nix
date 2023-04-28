@@ -8,12 +8,14 @@ in
   options.jenkos.services.ssh.openssh = with types; {
     enable =
       mkBoolOpt false "enable openssh?";
+    permitRootLogin = mkBoolOpt false "allow root login?";
   };
 
   config = mkIf cfg.enable {
     services.openssh = {
       enable = true;
       openFirewall = true;
+      permitRootLogin = if cfg.permitRootLogin then "prohibit-password" else "no";
     };
   };
 }
