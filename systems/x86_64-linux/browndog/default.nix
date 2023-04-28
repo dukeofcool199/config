@@ -22,7 +22,10 @@ with lib;
         arion = yes;
       };
       ssh = {
-        openssh = enabled;
+        openssh = {
+          enable = yes;
+          permitRootLogin = yes;
+        };
       };
       sftp = {
         enable = yes;
@@ -60,7 +63,7 @@ with lib;
 
   _module.args.nixinate = {
     host = "192.168.1.103";
-    sshUser = "jenkin";
+    sshUser = "root";
     buildOn = "local";
     substituteOnTarget = true;
     hermetic = true;
