@@ -41,6 +41,7 @@ with lib;
     };
     utilities = {
       threeDModeling = enabled;
+      office = enabled;
     };
     users = {
       halley = enabled;
@@ -74,14 +75,8 @@ with lib;
     flameshot
     magic-wormhole
 
-    libreoffice
-    spotify
     mpv
     feh
-    redshift
-    brightnessctl
-    xbindkeys
-    xbindkeys-config
     zip
     unzip
     asciiquarium
@@ -89,7 +84,6 @@ with lib;
     direnv
     nix-direnv
 
-    rofi
     exa
     fzf
   ];
@@ -99,7 +93,7 @@ with lib;
     sshUser = "root";
     buildOn = "local";
     substituteOnTarget = true;
-    hermetic = true;
+    hermetic = false;
   };
 
   # This value determines the NixOS release from which the default
