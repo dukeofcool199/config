@@ -96,7 +96,7 @@ with lib;
 
   _module.args.nixinate = {
     host = "192.168.1.19";
-    sshUser = "halley";
+    sshUser = "root";
     buildOn = "local";
     substituteOnTarget = true;
     hermetic = true;
