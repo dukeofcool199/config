@@ -35,8 +35,6 @@ with lib;
       avahi = enabled;
       gpg = enabled;
       udisks = enabled;
-      gitea = enabled;
-      vikunja = enabled;
     };
     developer = {
       git = {
