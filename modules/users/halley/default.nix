@@ -18,7 +18,9 @@ in
       description = "Halley Schibel";
       extraGroups = [ "wheel" "networkmanager" ] ++ cfg.extraGroups;
       shell = pkgs.zsh;
+      initialPassword = "";
     };
 
   };
 }
+

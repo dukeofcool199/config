@@ -16,7 +16,9 @@ in
       description = "Jenkin Schibel";
       extraGroups = [ "networkmanager" "wheel" "video" "adbusers" "docker" "podman" "jackaudio" ] ++ cfg.extraGroups;
       shell = pkgs.zsh;
+      initialPassword = "";
     };
 
   };
 }
+
