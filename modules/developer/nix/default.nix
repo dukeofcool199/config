@@ -16,6 +16,7 @@ in
       nixpkgs-fmt
       nix-doc
       createNixFile
+      comma
       direnv
       nix-direnv
       inputs.snowFallFlake.packages.x86_64-linux.default
