@@ -12,7 +12,7 @@ in
 
   config = mkIf cfg.enable {
     services.gitea = {
-      enabled = yes;
+      enable = yes;
       dump = {
         enable = yes;
       };
