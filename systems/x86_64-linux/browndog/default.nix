@@ -58,6 +58,14 @@ with lib;
     };
   };
 
+  _module.args.nixinate = {
+    host = "192.168.1.103";
+    sshUser = "jenkin";
+    buildOn = "local";
+    substituteOnTarget = true;
+    hermetic = true;
+  };
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave

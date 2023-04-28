@@ -191,6 +191,14 @@ with lib;
     ntfs3g
   ];
 
+  _module.args.nixinate = {
+    host = "192.168.1.19";
+    sshUser = "halley";
+    buildOn = "local";
+    substituteOnTarget = true;
+    hermetic = true;
+  };
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

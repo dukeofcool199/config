@@ -13,6 +13,8 @@
 
     flake-utils.url = "github:numtide/flake-utils";
 
+    nixinate.url = "github:matthewcroughan/nixinate";
+
     tunerstudio = {
       url = "https://www.tunerstudio.com/downloads2/TunerStudioMS_v3.1.08.tar.gz";
       flake = false;
@@ -48,6 +50,7 @@
             allowInsecure = true;
           };
 
+          apps = inputs.nixinate.nixinate.x86_64-linux inputs.self;
         };
 
       devShells = inputs.flake-utils.lib.eachDefaultSystem
