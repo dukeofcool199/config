@@ -4,14 +4,10 @@
 
 { config, pkgs, lib, ... }:
 
-let
-  initialPassword = "";
-in
 with lib;
 {
   imports =
     [
-      # Include the results of the hardware scan.
       ./hardware.nix
     ];
 
@@ -21,126 +17,38 @@ with lib;
       time = enabled;
       localisation = enabled;
       environment = enabled;
+      boot = enabled;
     };
-    networking = {
-      enable = yes;
-    };
+    networking = enabled;
     services = {
       ssh = {
         openssh = enabled;
       };
+      printing = enabled;
+      avahi = enabled;
+      udisks = enabled;
+      xserver = enabled;
+      sftp = {
+        enable = yes;
+        users = [ "halley" ];
+      };
+      gpg = enabled;
     };
-
+    hardware = {
+      zsa = enabled;
+      audio = enabled;
+      bluetooth = enabled;
+    };
     utilities = {
       threeDModeling = enabled;
     };
-  };
-
-  # Bootloader.
-  boot = {
-    loader = {
-      systemd-boot.enable = true;
-      systemd-boot.configurationLimit = 42;
-      efi.canTouchEfiVariables = true;
-      efi.efiSysMountPoint = "/boot/efi";
+    users = {
+      halley = enabled;
+      jenkin = enabled;
     };
   };
-
-  # Enable networking
-  networking.networkmanager.enable = true;
-
-  # Open ports in the firewall.
-  networking.firewall = {
-    allowedTCPPorts = [ 21 ];
-    enable = true;
-    allowPing = false;
-  };
-
-
-  # Set your time zone.
-  time.timeZone = "America/Los_Angeles";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.utf8";
-
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  services.udisks2.enable = true;
-
-  services.udev.packages = with pkgs;[ zsa-udev-rules ];
-
-  # services.xserver.desktopManager.cinnamon.enable = true;
 
   services.xserver.desktopManager.plasma5.enable = true;
-
-  # Configure keymap in X11
-  services.xserver = {
-    layout = "us";
-    xkbVariant = "";
-  };
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-  services.avahi.enable = true;
-  services.avahi.nssmdns = true;
-  services.avahi.openFirewall = true;
-
-  # Enable sound with pipewire.
-  sound.enable = true;
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
-
-  hardware.bluetooth.enable = true;
-
-  services.vsftpd = {
-    enable = true;
-    writeEnable = true;
-    localUsers = true;
-    userlist = [ "halley" ];
-    userlistEnable = true;
-  };
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  services.xserver.libinput = {
-    enable = true;
-    touchpad = {
-      tapping = true;
-    };
-  };
-
-  users.users.root.initialHashedPassword = initialPassword;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.halley = {
-    isNormalUser = true;
-    description = "Halley Schibel";
-    extraGroups = [ "networkmanager" "wheel" ];
-    shell = pkgs.zsh;
-    initialHashedPassword = initialPassword;
-  };
-
-
-  nixpkgs = {
-    config = {
-      allowUnfree = true;
-      allowBroken = true;
-      packageOverrides = pkgs: {
-        steam = pkgs.steam.override {
-          extraPkgs = pkgs: with pkgs; [
-            libgdiplus
-          ];
-        };
-      };
-    };
-  };
-
 
   # List packages installed in system profile. To search, run:
   environment.systemPackages = with pkgs; [
@@ -181,14 +89,9 @@ with lib;
     direnv
     nix-direnv
 
-    dmenu
     rofi
     exa
     fzf
-    autorandr
-
-    udiskie
-    ntfs3g
   ];
 
   _module.args.nixinate = {
@@ -198,16 +101,6 @@ with lib;
     substituteOnTarget = true;
     hermetic = true;
   };
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
-  };
-
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
