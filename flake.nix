@@ -15,6 +15,8 @@
 
     nixinate.url = "github:matthewcroughan/nixinate";
 
+    nurl.url = "github:nix-community/nurl";
+
     tunerstudio = {
       url = "https://www.tunerstudio.com/downloads2/TunerStudioMS_v3.1.08.tar.gz";
       flake = false;
