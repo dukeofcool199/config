@@ -13,7 +13,7 @@ with lib;
     };
     networking = {
       enable = yes;
-      allowedTcpPorts = [ 80 443 ];
+      allowedTcpPorts = [ 80 443 3000 ];
     };
     services = {
       virtualisation = {
@@ -35,6 +35,7 @@ with lib;
       avahi = enabled;
       gpg = enabled;
       udisks = enabled;
+      gitea = enabled;
     };
     developer = {
       git = {
@@ -67,7 +68,7 @@ with lib;
     sshUser = "root";
     buildOn = "remote";
     substituteOnTarget = true;
-    hermetic = true;
+    hermetic = false;
   };
 
   # This value determines the NixOS release from which the default
