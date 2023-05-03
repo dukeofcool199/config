@@ -20,6 +20,12 @@ in
       experimental-features = [ "nix-command" "flakes" ];
       trusted-users = [ "@wheel" "jenkin" "root" ];
       sandbox = "relaxed";
+      auto-optimise-store = true;
+      gc = {
+        automatic = true;
+        dates = "weekly";
+        options = "--delete-older-than 14d";
+      };
     };
   };
 }
