@@ -18,7 +18,8 @@ in
 
     nix.settings = {
       experimental-features = [ "nix-command" "flakes" ];
-      trusted-users = [ "@wheel" "jenkin" ];
+      trusted-users = [ "@wheel" "jenkin" "root" ];
+      sandbox = "relaxed";
     };
   };
 }

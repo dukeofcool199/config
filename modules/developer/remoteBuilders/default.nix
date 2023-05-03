@@ -12,17 +12,17 @@ in
   config = mkIf cfg.enable {
     nix = {
       buildMachines = [{
-        hostName = "192.168.1.103";
+        hostName = "browndog";
         systems = [ "x86_64-linux" "aarch64-linux" ];
         maxJobs = 4;
-        supportedFeatures = [ "nixos-test" "benchmark" "kvm" ];
+        supportedFeatures = [ "big-parallel" "nixos-test" "benchmark" "kvm" ];
       }];
 
 
       distributedBuilds = true;
-      # extraOptions = ''
-      #   builders-use-substitutes = true
-      # '';
+      extraOptions = ''
+        builders-use-substitutes = true
+      '';
 
     };
   };
