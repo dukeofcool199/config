@@ -14,6 +14,7 @@ in
     environment.systemPackages = with pkgs; [
       git
       tea
+      spr
       delta
       git-annex
       git-town
