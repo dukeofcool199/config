@@ -54,6 +54,7 @@ with lib;
       zsa = enabled;
       audio = enabled;
       bluetooth = enabled;
+      nvidia = enabled;
     };
     apps = {
       ardour = enabled;
@@ -113,7 +114,7 @@ with lib;
   _module.args.nixinate = {
     host = "192.168.1.14";
     sshUser = "root";
-    buildOn = "remote";
+    buildOn = "local";
     substituteOnTarget = true;
     hermetic = false;
   };
