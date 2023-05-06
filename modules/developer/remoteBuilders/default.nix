@@ -3,6 +3,9 @@
 with lib;
 let
   cfg = config.jenkos.developer.remoteBuilders;
+  systems = [ "x86_64-linux" "aarch64-linux" ];
+  maxJobs = 4;
+  supportedFeatures = [ "big-parallel" "nixos-test" "benchmark" "kvm" ];
 in
 {
   options.jenkos.developer.remoteBuilders = with types; {
@@ -11,13 +14,16 @@ in
 
   config = mkIf cfg.enable {
     nix = {
-      buildMachines = [{
-        hostName = "browndog";
-        systems = [ "x86_64-linux" "aarch64-linux" ];
-        maxJobs = 4;
-        supportedFeatures = [ "big-parallel" "nixos-test" "benchmark" "kvm" ];
-      }];
-
+      buildMachines = [
+        {
+          hostName = "browndog";
+          inherit systems maxJobs supportedFeatures;
+        }
+        {
+          hostName = "ammobox";
+          inherit systems maxJobs supportedFeatures;
+        }
+      ];
 
       distributedBuilds = true;
       extraOptions = ''
