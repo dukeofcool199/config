@@ -110,6 +110,14 @@ with lib;
     };
   };
 
+  _module.args.nixinate = {
+    host = "192.168.1.14";
+    sshUser = "root";
+    buildOn = "remote";
+    substituteOnTarget = true;
+    hermetic = false;
+  };
+
   # //TODO: fix this so email is in email module probably with an overlay
   environment.systemPackages = with pkgs;
     [
