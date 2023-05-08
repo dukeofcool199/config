@@ -14,7 +14,7 @@ in
 
   config = {
     environment.systemPackages = with pkgs;
-      optParams cfg.graphical [ firefox chromium brave ] [ ] ++
+      optParams cfg.graphical [ firefox chromium brave qutebrowser ] [ ] ++
       optParams cfg.cli [ browsh lynx ] [ ] ++
       optParams cfg.tor [ tor tor-browser-bundle-bin ] [ ]
     ;
