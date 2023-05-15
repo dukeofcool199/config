@@ -21,12 +21,9 @@ in
       zip
       unzip
       exa
-      du-dust
-      duf
       fzf
       ripgrep
       entr
-      fd
       steam-run
       xclip
     ];

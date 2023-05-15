@@ -13,6 +13,11 @@ in
   config = mkIf cfg.enable {
 
     environment.systemPackages = with pkgs; [
+
+      du-dust
+      duf
+      sysz
+      busybox
       htop
       ncdu
     ];
