@@ -126,6 +126,7 @@ with lib;
   environment.systemPackages = with pkgs;
     [
       email
+      dotgit
     ];
 
   # This value determines the NixOS release from which the default
