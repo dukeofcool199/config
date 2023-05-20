@@ -45,6 +45,7 @@ in
         rootless = {
           enable = cfg.docker-rootless;
         };
+        liveRestore = false;
       };
       podman = {
         enable = cfg.podman;
