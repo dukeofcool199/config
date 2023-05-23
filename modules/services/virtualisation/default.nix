@@ -13,6 +13,7 @@ in
     vmware = mkBoolOpt false "enable vmware";
     virtualbox = mkBoolOpt false "enable virtualbox";
     vagrant = mkBoolOpt false "enable vagrant";
+    waydroid = mkBoolOpt false "enable waydroid";
     virtualboxUsers = mkOpt (listOf str) [ ] "users to be added to virtualbox";
   };
 
@@ -54,6 +55,10 @@ in
             enable = cfg.podman;
           };
         };
+      };
+
+      waydroid = {
+        enable = cfg.waydroid;
       };
     };
 

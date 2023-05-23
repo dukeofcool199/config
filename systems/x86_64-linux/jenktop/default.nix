@@ -40,6 +40,8 @@ with lib;
 
         arion = yes;
         vagrant = yes;
+
+        waydroid = yes;
       };
       ssh = {
         openssh = enabled;
