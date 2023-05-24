@@ -15,6 +15,7 @@ in
       git
       tea
       spr
+      mr
       delta
       git-annex
       git-town
