@@ -14,6 +14,7 @@ in
 
     environment.systemPackages = with pkgs; [
 
+      gparted
       du-dust
       duf
       sysz
