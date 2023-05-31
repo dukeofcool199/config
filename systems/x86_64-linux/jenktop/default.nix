@@ -85,7 +85,7 @@ with lib;
       training = enabled;
       android = enabled;
       java = enabled;
-      remoteBuilders = enabled;
+      # remoteBuilders = enabled;
     };
     users = {
       jenkin = enabled;
