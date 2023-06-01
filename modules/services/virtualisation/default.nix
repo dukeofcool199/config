@@ -52,9 +52,10 @@ in
       podman = {
         enable = cfg.podman;
         defaultNetwork = {
-          dnsname = {
-            enable = cfg.podman;
+          settings = {
+            dns_enabled = cfg.podman;
           };
+
         };
       };
 

@@ -11,6 +11,7 @@ in
   };
 
   config = mkIf cfg.enable {
+    programs.zsh.enable = true;
     users.users.jenkin = {
       isNormalUser = true;
       description = "Jenkin Schibel";

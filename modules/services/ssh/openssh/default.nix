@@ -15,7 +15,10 @@ in
     services.openssh = {
       enable = true;
       openFirewall = true;
-      permitRootLogin = if cfg.permitRootLogin then "yes" else "prohibit-password";
+      settings = {
+
+        PermitRootLogin = if cfg.permitRootLogin then "yes" else "prohibit-password";
+      };
     };
   };
 }
