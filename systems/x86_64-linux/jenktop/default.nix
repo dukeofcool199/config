@@ -42,6 +42,8 @@ with lib;
         vagrant = yes;
 
         waydroid = yes;
+
+        wine = yes;
       };
       ssh = {
         openssh = enabled;

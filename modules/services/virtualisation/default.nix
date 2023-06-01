@@ -14,6 +14,7 @@ in
     virtualbox = mkBoolOpt false "enable virtualbox";
     vagrant = mkBoolOpt false "enable vagrant";
     waydroid = mkBoolOpt false "enable waydroid";
+    wine = mkBoolOpt false "enable wine";
     virtualboxUsers = mkOpt (listOf str) [ ] "users to be added to virtualbox";
   };
 
@@ -23,7 +24,7 @@ in
     ] else [ ]) ++
     (if cfg.vagrant then [
       pkgs.vagrant
-    ] else [ ]);
+    ] else [ ]) ++ optList cfg.wine [ pkgs.wine pkgs.wine64 pkgs.winetricks ];
 
     virtualisation = {
       vmware = {
