@@ -5,7 +5,8 @@
 
 {
   imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
+    [
+      (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
@@ -14,18 +15,19 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/966d3736-3faa-4a9d-b764-f472881f4d0f";
+    {
+      device = "/dev/disk/by-uuid/966d3736-3faa-4a9d-b764-f472881f4d0f";
       fsType = "ext4";
     };
 
   fileSystems."/boot/efi" =
-    { device = "/dev/disk/by-uuid/2465-E55F";
+    {
+      device = "/dev/disk/by-uuid/2465-E55F";
       fsType = "vfat";
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/f5eb087e-0585-4eab-8b5d-8982eeb72f70"; }
-    ];
+    [{ device = "/dev/disk/by-uuid/f5eb087e-0585-4eab-8b5d-8982eeb72f70"; }];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
@@ -38,5 +40,4 @@
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   # high-resolution display
-  hardware.video.hidpi.enable = lib.mkDefault true;
 }
