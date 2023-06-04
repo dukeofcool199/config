@@ -86,6 +86,8 @@ with lib;
 
     exa
     fzf
+
+    qgis
   ];
 
   _module.args.nixinate = {
