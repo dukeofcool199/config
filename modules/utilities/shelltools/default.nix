@@ -21,6 +21,7 @@ in
       zip
       unzip
       exa
+      bat
       fzf
       ripgrep
       entr
