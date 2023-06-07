@@ -1,14 +1,14 @@
 { pkgs, ... }:
 with pkgs;
 let
-  browser = mupdf;
+  reader = mupdf;
 in
 writeShellApplication {
   name = "read";
-  runtimeInputs = [ rdrview browser xclip ];
+  runtimeInputs = [ rdrview reader xclip ];
   text = ''
 
-    rdrview  "$(xclip -o -sel clip)" -B ${browser.pname}
+    rdrview  "$(xclip -o -sel clip)" -B ${reader.pname}
 
   '';
 
