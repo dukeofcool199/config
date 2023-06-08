@@ -17,6 +17,7 @@ in
         sweethome3d.textures-editor
         sweethome3d.furniture-editor
         blender
+        universalGcodeSender
 
       ];
   };
