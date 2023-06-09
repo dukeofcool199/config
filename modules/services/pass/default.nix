@@ -16,6 +16,7 @@ in
       qrencode
       dmenu
       git
+      tessen
     ] ++ optList cfg.gui [ qtpass ];
   };
 }
