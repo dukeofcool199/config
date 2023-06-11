@@ -25,6 +25,7 @@ with lib;
         openssh = {
           enable = yes;
           permitRootLogin = yes;
+          allowPasswordLogin = no;
         };
       };
       sftp = {
