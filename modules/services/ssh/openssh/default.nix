@@ -6,9 +6,9 @@ let
 in
 {
   options.jenkos.services.ssh.openssh = with types; {
-    enable =
-      mkBoolOpt false "enable openssh?";
+    enable = mkBoolOpt false "enable openssh?";
     permitRootLogin = mkBoolOpt false "allow root login?";
+    allowPasswordLogin = mkBoolOpt false "prohibit password login?";
   };
 
   config = mkIf cfg.enable {
@@ -16,8 +16,9 @@ in
       enable = true;
       openFirewall = true;
       settings = {
-
         PermitRootLogin = if cfg.permitRootLogin then "yes" else "prohibit-password";
+        PasswordAuthentication = cfg.allowPasswordLogin
+        ;
       };
     };
   };
