@@ -18,6 +18,8 @@
 
     nurl.url = "github:nix-community/nurl";
 
+    nixd.url = "github:nix-community/nixd";
+
     tunerstudio = {
       url = "https://www.tunerstudio.com/downloads2/TunerStudioMS_v3.1.08.tar.gz";
       flake = false;

@@ -21,6 +21,7 @@ in
       direnv
       nix-direnv
       inputs.snowFallFlake.packages.x86_64-linux.default
+      inputs.nixd.packages.x86_64-linux.default
     ];
     environment.pathsToLink = [
       "/share/nix-direnv"
