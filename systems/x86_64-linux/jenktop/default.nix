@@ -132,6 +132,7 @@ with lib;
       email
       dotgit
       gnomecast
+      chatgpt-cli
     ];
 
   # This value determines the NixOS release from which the default
