@@ -45,7 +45,8 @@ in
       docker = {
         enable = cfg.docker;
         rootless = {
-          enable = cfg.docker-rootless;
+          enable = true;
+          setSocketVariable = true;
         };
         liveRestore = false;
       };
