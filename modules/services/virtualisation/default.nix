@@ -24,7 +24,7 @@ in
     ] else [ ]) ++
     (if cfg.vagrant then [
       pkgs.vagrant
-    ] else [ ]) ++ optList cfg.wine [ pkgs.wine pkgs.wine64 pkgs.winetricks ];
+    ] else [ ]) ++ optList cfg.wine [ pkgs.wine pkgs.wine64 pkgs.winetricks ] ++ optList cfg.podman [ pkgs.podman pkgs.podman-compose podman-tui pods ];
 
     virtualisation = {
       vmware = {
