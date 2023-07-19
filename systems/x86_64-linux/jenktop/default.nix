@@ -35,6 +35,8 @@ with lib;
         docker-rootless = yes;
         vmware = yes;
 
+        podman = yes;
+
         virtualbox = yes;
         virtualboxUsers = [ "jenkin" ];
 
