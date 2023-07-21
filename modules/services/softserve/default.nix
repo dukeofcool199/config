@@ -27,6 +27,7 @@ in
     systemd.services.softserve = {
       environment = {
         SOFT_SERVE_REPO_PATH = cfg.dataDir;
+        SOFT_SERVE_DATA_PATH = cfg.dataDir;
       };
       enable = true;
       after = [ "network.target" ];
