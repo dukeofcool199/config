@@ -25,6 +25,9 @@ in
     users.groups.${cfg.group} = { };
 
     systemd.services.softserve = {
+      environment = {
+        SOFT_SERVE_REPO_PATH = cfg.dataDir;
+      };
       enable = true;
       after = [ "network.target" ];
       serviceConfig = {
