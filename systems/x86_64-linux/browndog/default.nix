@@ -16,6 +16,11 @@ with lib;
       allowedTcpPorts = [ 80 443 3000 ];
     };
     services = {
+      softserve = {
+        enable = yes;
+        user = "git-annex";
+        directory = "/home/git-annex/softserve/data";
+      };
       virtualisation = {
         docker = yes;
         docker-rootless = yes;
