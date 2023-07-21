@@ -18,8 +18,6 @@ with lib;
     services = {
       softserve = {
         enable = yes;
-        user = "git-annex";
-        directory = "/home/git-annex/softserve/data";
       };
       virtualisation = {
         docker = yes;
