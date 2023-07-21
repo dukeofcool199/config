@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ nixpkgs, lib, pkgs, ... }:
 
 with lib;
 let
@@ -6,13 +6,25 @@ let
 in
 {
   options.jenkos.services.softserve = with types; {
-    enable =
-      mkBoolOpt false "enable softserve?";
+    enable = mkBoolOpt false "enable softserve?";
+    dataDir = mkOpt types.str "/var/lib/soft-serve" "set the data directory";
+    user = mkOpt types.str "softserve" "set the user";
+    group = mkOpt types.str "softserve" "set the group";
   };
 
   config = mkIf cfg.enable {
-    systemd.services.softserve = {
 
+    users.users.${cfg.user} =
+      if cfg.user == "softserve" then {
+        isSystemUser = true;
+        group = cfg.group;
+        home = cfg.dataDir;
+        createHome = true;
+      } else { };
+
+    users.groups.${cfg.group} = { };
+
+    systemd.services.softserve = {
       enable = true;
       after = [ "network.target" ];
       serviceConfig = {
@@ -21,6 +33,10 @@ in
         PrivateTmp = "yes";
         User = "root";
       };
+      preStart = ''
+        mkdir -p ${cfg.dataDir}
+        chown ${cfg.user} ${cfg.dataDir}
+      '';
 
     };
   };
