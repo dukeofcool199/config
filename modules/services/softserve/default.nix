@@ -1,4 +1,4 @@
-{ nixpkgs, lib, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 with lib;
 let
@@ -35,7 +35,7 @@ in
       };
       preStart = ''
         mkdir -p ${cfg.dataDir}
-        chown ${cfg.user} ${cfg.dataDir}
+        chown -R root ${cfg.dataDir}
       '';
 
     };
