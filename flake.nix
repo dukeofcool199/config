@@ -20,6 +20,8 @@
 
     nixd.url = "github:nix-community/nixd";
 
+    charmbracelet.url = "github:charmbracelet/nur";
+
     tunerstudio = {
       url = "https://www.tunerstudio.com/downloads2/TunerStudioMS_v3.1.08.tar.gz";
       flake = false;
