@@ -19,12 +19,12 @@ in
   };
 
   config = {
-    environment.systemPackages = (if cfg.arion then [
-      pkgs.arion
+    environment.systemPackages = with pkgs; (if cfg.arion then [
+      arion
     ] else [ ]) ++
     (if cfg.vagrant then [
-      pkgs.vagrant
-    ] else [ ]) ++ optList cfg.wine [ pkgs.wine pkgs.wine64 pkgs.winetricks ] ++ optList cfg.podman [ pkgs.podman pkgs.podman-compose podman-tui pods ];
+      vagrant
+    ] else [ ]) ++ optList cfg.wine [ wine wine64 winetricks ] ++ optList cfg.podman [ podman podman-compose podman-tui pods ];
 
     virtualisation = {
       vmware = {
