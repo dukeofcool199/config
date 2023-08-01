@@ -16,6 +16,7 @@ with lib;
       allowedTcpPorts = [ 80 443 3000 23231 ];
     };
     services = {
+      vikunja = enabled;
       softserve = {
         enable = yes;
       };
