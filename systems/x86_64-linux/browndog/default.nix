@@ -13,7 +13,7 @@ with lib;
     };
     networking = {
       enable = yes;
-      allowedTcpPorts = [ 80 443 3000 23231 ];
+      allowedTcpPorts = [ 80 443 3000 23231 3456 ];
     };
     services = {
       vikunja = enabled;
