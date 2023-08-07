@@ -136,6 +136,7 @@ with lib;
       gnomecast
       chatgpt-cli
       pop
+      todo
       mods
     ];
 
