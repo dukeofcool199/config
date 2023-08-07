@@ -6,7 +6,7 @@ in
 {
   options.jenkos.system.time = with types; {
     enable = mkBoolOpt false "enable timezone information?";
-    timezone = mkStrOpt "America/Los_Angeles" "what timezone?";
+    timezone = mkStrOpt "America/Boise" "what timezone?";
   };
 
   config = mkIf cfg.enable {
