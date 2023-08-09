@@ -19,6 +19,7 @@ in
       workchat
       weechat
       profanity
+      dino
       tdesktop
     ];
 
