@@ -17,9 +17,7 @@ in
       discord
       element-desktop
       workchat
-      weechat
-      profanity
-      dino
+      gajim
       tdesktop
     ];
 
