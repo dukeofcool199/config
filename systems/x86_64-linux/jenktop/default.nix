@@ -138,6 +138,8 @@ with lib;
       pop
       todo
       mods
+      nodePackages.mermaid-cli
+      mermaid
     ];
 
   # This value determines the NixOS release from which the default
