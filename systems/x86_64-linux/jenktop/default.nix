@@ -140,6 +140,7 @@ with lib;
       mods
       nodePackages.mermaid-cli
       mermaid
+      fjira
     ];
 
   # This value determines the NixOS release from which the default
