@@ -232,6 +232,7 @@
       },
       "original": {
         "owner": "dukeofcool199",
+        "ref": "main",
         "repo": "neovim",
         "type": "github"
       }

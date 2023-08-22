@@ -28,7 +28,7 @@
     };
 
     jenkvim = {
-      url = "github:dukeofcool199/neovim";
+      url = "github:dukeofcool199/neovim/main";
     };
 
 
