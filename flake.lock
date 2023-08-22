@@ -223,11 +223,11 @@
         "snowfall-lib": "snowfall-lib"
       },
       "locked": {
-        "lastModified": 1692740790,
-        "narHash": "sha256-e+utCkPpy4Hj8PGO6QdxJ6ThMTXCdjF7ZnMibtayTVI=",
+        "lastModified": 1692746260,
+        "narHash": "sha256-u91YtNRYccBt21cAsNhhSKe7V4eJqUIQ6aDUr9TQeco=",
         "owner": "dukeofcool199",
         "repo": "neovim",
-        "rev": "fc709943bcbd0aa2e95b17bbbeb4a01b9bc581c8",
+        "rev": "2edd19dba99187eb1075cfd350b4a9f2d233df02",
         "type": "github"
       },
       "original": {
@@ -361,11 +361,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1687729501,
-        "narHash": "sha256-mTLkMePoHUWvTCf3NuKbeYEea/tsikSIKBWwb9OfRr4=",
+        "lastModified": 1692587767,
+        "narHash": "sha256-J1ZaJEWgUoT4zfNnhKukYLjel67bQyNHL1FqQ/kqCLo=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "35130d4b4f0b8c50ed2aceb909a538c66c91d4a0",
+        "rev": "57492e92b9829946d866b700c101d9a5cc8d749e",
         "type": "github"
       },
       "original": {
@@ -507,11 +507,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1677030094,
-        "narHash": "sha256-OqcOKVsAW23+Wi2kkrFPhX7+t6n22fSLzt/Oe5PesvI=",
+        "lastModified": 1692259977,
+        "narHash": "sha256-KZIElNWu0bb4T0axXDSn7aDb96h+6pYUKJWIbZj0E9A=",
         "owner": "snowfallorg",
         "repo": "lib",
-        "rev": "b428b981b96114612414313fa62f3ed14cc8f168",
+        "rev": "32b5448e283b9ede9f88b393be31404e33099689",
         "type": "github"
       },
       "original": {
