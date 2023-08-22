@@ -27,6 +27,10 @@
       flake = false;
     };
 
+    jenkvim = {
+      url = "github:dukeofcool199/neovim";
+    };
+
 
     snowFallFlake.url = "github:snowfallorg/flake";
     snowFallFlake.inputs.nixpkgs.follows = "unstable";
