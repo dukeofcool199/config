@@ -17,7 +17,7 @@ in
       monero-cli
       monero-gui
       trezor-suite
-      # exodus
+      exodus
     ];
 
   };
