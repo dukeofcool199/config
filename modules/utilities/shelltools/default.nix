@@ -27,6 +27,7 @@ in
       entr
       steam-run
       xclip
+      so
     ];
 
   };
