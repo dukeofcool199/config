@@ -112,7 +112,7 @@ with lib;
   };
 
   _module.args.nixinate = {
-    host = "192.168.1.14";
+    host = "192.168.109.43";
     sshUser = "root";
     buildOn = "local";
     substituteOnTarget = true;
