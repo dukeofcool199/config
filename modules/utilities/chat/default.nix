@@ -18,6 +18,7 @@ in
       element-desktop
       workchat
       gajim
+      qtox
       dino
       tdesktop
     ];
