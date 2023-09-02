@@ -13,17 +13,22 @@ in
 
   config = mkIf cfg.enable {
     nixpkgs.config.allowUnfree = true;
-    boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
     services.xserver.videoDrivers = [ "nvidia" ];
+
+    boot.kernelParams = [ "module_blacklist=amdgpu" ];
 
     hardware = {
       nvidia = {
         forceFullCompositionPipeline = true;
-        package = config.boot.kernelPackages.nvidiaPackages.stable;
         modesetting.enable = true;
-        open = true;
+        open = false;
+        nvidiaSettings = true;
       };
-      opengl.enable = true;
+      opengl = {
+        enable = true;
+        driSupport = true;
+        driSupport32Bit = true;
+      };
     };
 
 
