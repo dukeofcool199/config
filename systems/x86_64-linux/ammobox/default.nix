@@ -32,9 +32,6 @@ with lib;
       virtualisation = {
         docker = yes;
         docker-rootless = yes;
-
-        virtualbox = yes;
-        virtualboxUsers = [ "jenkin" ];
       };
       ssh = {
         openssh = enabled;
