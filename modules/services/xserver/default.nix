@@ -12,6 +12,13 @@ in
 
   config = mkIf cfg.enable {
     services.xserver = {
+
+      displayManager = {
+        gdm = {
+          enable = true;
+        };
+      };
+
       enable = true;
       layout = "us";
       xkbVariant = "";
