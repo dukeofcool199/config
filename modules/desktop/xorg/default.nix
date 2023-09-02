@@ -10,7 +10,7 @@ in
   };
 
   config = mkIf cfg.basicConfigs {
-    services.xserver = {
+    jenkos.services.xserver = {
       enable = yes;
     };
     environment.variables = {
