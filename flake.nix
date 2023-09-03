@@ -22,6 +22,8 @@
 
     charmbracelet.url = "github:charmbracelet/nur";
 
+    blender-bin.url = "github:edolstra/nix-warez?dir=blender";
+
     tunerstudio = {
       url = "https://www.tunerstudio.com/downloads2/TunerStudioMS_v3.1.08.tar.gz";
       flake = false;
