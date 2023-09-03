@@ -88,6 +88,8 @@ with lib;
     exa
     fzf
 
+    todo
+
     qgis
   ];
 
