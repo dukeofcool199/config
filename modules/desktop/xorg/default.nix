@@ -10,6 +10,7 @@ in
   };
 
   config = mkIf cfg.basicConfigs {
+    services.fractalart.enable = true;
     jenkos.services.xserver = {
       enable = yes;
     };
