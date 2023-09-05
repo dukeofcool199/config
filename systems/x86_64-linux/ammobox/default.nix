@@ -59,6 +59,7 @@ with lib;
     };
     gaming = {
       steam = enabled;
+      minecraft = enabled;
     };
     developer = {
       git = {
