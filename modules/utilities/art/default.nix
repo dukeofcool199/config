@@ -16,6 +16,7 @@ in
         gimp
         gthumb
         flowblade
+        lmms
       ];
   };
 }
