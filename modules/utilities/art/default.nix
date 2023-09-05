@@ -6,7 +6,7 @@ let
 in
 {
   options.jenkos.utilities.art = with types; {
-    enable = mkBoolOpt false "enable all my favorite art  tools?";
+    enable = mkBoolOpt false "enable all my favorite art tools?";
 
   };
   config = mkIf cfg.enable {
@@ -15,6 +15,7 @@ in
         blender
         gimp
         gthumb
+        flowblade
       ];
   };
 }
