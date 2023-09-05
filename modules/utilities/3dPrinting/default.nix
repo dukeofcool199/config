@@ -13,7 +13,6 @@ in
     environment.systemPackages = with pkgs;
       [
         slic3r
-        openscad
       ];
   };
 }

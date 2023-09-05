@@ -18,7 +18,7 @@ in
         sweethome3d.furniture-editor
         blender
         universalGcodeSender
-
+        openscad
       ];
   };
 }
