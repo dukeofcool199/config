@@ -17,7 +17,7 @@ in
     };
 
     nix.settings = {
-      experimental-features = [ "nix-command" "flakes" ];
+      experimental-features = [ "nix-command" "flakes" "impure-derivations" "ca-derivations" ];
       trusted-users = [ "@wheel" "jenkin" "root" ];
       sandbox = "relaxed";
     };
