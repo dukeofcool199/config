@@ -18,7 +18,7 @@ in
       du-dust
       duf
       sysz
-      busybox
+      toybox
       htop
       ncdu
     ];
