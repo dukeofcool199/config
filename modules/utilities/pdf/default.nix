@@ -11,6 +11,10 @@ in
   };
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs;
-      [ okular mupdf ];
+      [
+        okular
+        mupdf
+        koreader
+      ];
   };
 }
