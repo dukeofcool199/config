@@ -35,16 +35,10 @@ with lib;
         docker-rootless = yes;
         vmware = yes;
 
-        podman = yes;
-
         virtualbox = yes;
         virtualboxUsers = [ "jenkin" ];
 
-        arion = yes;
         vagrant = yes;
-
-        waydroid = yes;
-
         wine = yes;
       };
       ssh = {
