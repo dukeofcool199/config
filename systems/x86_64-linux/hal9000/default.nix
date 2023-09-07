@@ -43,6 +43,7 @@ with lib;
       threeDModeling = enabled;
       office = enabled;
       chat = enabled;
+      art = enabled;
     };
     users = {
       halley = enabled;
