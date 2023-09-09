@@ -18,6 +18,7 @@ in
       mr
       delta
       git-annex
+      git-annex-utils
       git-town
       lazygit
       meld
