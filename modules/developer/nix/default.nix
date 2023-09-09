@@ -18,6 +18,7 @@ in
       createNixFile
       comma
       nurl
+      prefetch-npm-deps
       direnv
       nix-direnv
       inputs.snowFallFlake.packages.x86_64-linux.default
