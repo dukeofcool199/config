@@ -28,11 +28,26 @@ with lib;
       avahi = enabled;
       udisks = enabled;
       xserver = enabled;
+      pass = {
+        enable = true;
+        gui = true;
+      };
+
       sftp = {
         enable = yes;
         users = [ "halley" ];
       };
       gpg = enabled;
+    };
+
+    developer = {
+      git = {
+        enable = yes;
+      };
+      vim = enabled;
+      nix = enabled;
+      vscode = enabled;
+      python = enabled;
     };
     hardware = {
       zsa = enabled;
@@ -40,10 +55,17 @@ with lib;
       bluetooth = enabled;
     };
     utilities = {
+      browsing = {
+        graphical = yes;
+        tor = yes;
+      };
       threeDModeling = enabled;
       office = enabled;
       chat = enabled;
       art = enabled;
+      shelltools = enabled;
+      screenshot = enabled;
+      filecopy = enabled;
     };
     users = {
       halley = enabled;
@@ -55,42 +77,7 @@ with lib;
 
   # List packages installed in system profile. To search, run:
   environment.systemPackages = with pkgs; [
-    (firefox.override { extraNativeMessagingHosts = [ passff-host ]; })
-    chromium
-
-    git
-    git-annex
-    git-annex-utils
-    vim
-    pass
-    qtpass
-    neovim
-    vscode
-
-    python3
-
-    tldr
-    wget
-    curl
-    file
-    xclip
-    flameshot
-    magic-wormhole
-
-    mpv
-    feh
-    zip
-    unzip
-    asciiquarium
-
-    direnv
-    nix-direnv
-
-    exa
-    fzf
-
     todo
-
     qgis
   ];
 
