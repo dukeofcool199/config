@@ -14,6 +14,7 @@ in
 
     environment.systemPackages = with pkgs; [
       zoom-us
+      jitsi-meet-electron
       discord
       element-desktop
       workchat
