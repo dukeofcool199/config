@@ -21,7 +21,7 @@ in
             } else { };
           grub = {
             efiSupport = true;
-            efiInstallAsRemovable = true;
+            efiInstallAsRemovable = false;
             device = "nodev";
           };
         } else {
