@@ -10,10 +10,7 @@ with lib;
       time = enabled;
       localisation = enabled;
       environment = enabled;
-      boot = {
-        enable = yes;
-        efi = false;
-      };
+      boot = enabled;
     };
     desktop = {
       xorg = {
