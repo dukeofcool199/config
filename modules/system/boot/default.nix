@@ -1,7 +1,9 @@
 { options, config, pkgs, lib, ... }:
 
 with lib;
-let cfg = config.jenkos.system.boot;
+let
+  cfg = config.jenkos.system.boot;
+  configLimit = 35;
 in
 {
   options.jenkos.system.boot = with types; {
@@ -23,10 +25,11 @@ in
             efiSupport = true;
             efiInstallAsRemovable = false;
             device = "nodev";
+            configurationLimit = configLimit;
           };
         } else {
           systemd-boot.enable = true;
-          systemd-boot.configurationLimit = 35;
+          systemd-boot.configurationLimit = configLimit;
           efi.canTouchEfiVariables = cfg.efi;
           efi.efiSysMountPoint = if cfg.efi then "/boot/efi" else "/boot";
 
