@@ -15,6 +15,7 @@ in
     vagrant = mkBoolOpt false "enable vagrant";
     waydroid = mkBoolOpt false "enable waydroid";
     wine = mkBoolOpt false "enable wine";
+    qemu = mkBoolOpt false "install qemu tools";
     virtualboxUsers = mkOpt (listOf str) [ ] "users to be added to virtualbox";
   };
 
@@ -24,7 +25,7 @@ in
     ] else [ ]) ++
     (if cfg.vagrant then [
       vagrant
-    ] else [ ]) ++ optList cfg.wine [ wine wine64 winetricks ] ++ optList cfg.podman [ podman podman-compose podman-tui pods ];
+    ] else [ ]) ++ optList cfg.wine [ wine wine64 winetricks ] ++ optList cfg.podman [ podman podman-compose podman-tui pods ] ++ optList cfg.qemu [ qemu_full qemu-utils ];
 
     virtualisation = {
       vmware = {
