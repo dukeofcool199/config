@@ -85,6 +85,7 @@ with lib;
       training = enabled;
       android = enabled;
       java = enabled;
+      vscode = enabled;
       # remoteBuilders = enabled;
     };
     users = {
