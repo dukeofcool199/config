@@ -29,6 +29,7 @@ in
       steam-run
       xclip
       so
+      trashy
     ];
 
   };
