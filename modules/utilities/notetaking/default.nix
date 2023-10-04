@@ -3,7 +3,7 @@
 with lib;
 let
   cfg = config.jenkos.utilities.notetaking;
-  nbTools = with pkgs;[ nodePackages.readability-cli nb w3m nmap pandoc ripgrep tig w3m ];
+  nbTools = with pkgs;[ nodePackages.readability-cli nb poppler_utils w3m nmap pandoc ripgrep tig w3m ];
 in
 {
   options.jenkos.utilities.notetaking = with types; {
