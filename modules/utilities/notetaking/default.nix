@@ -15,7 +15,7 @@ in
     programs = {
       mtr = { enable = yes; };
     };
-    environment.systemPackages = with pkgs; [ ] ++ nbTools;
+    environment.systemPackages = with pkgs; [ todo ] ++ nbTools;
 
   };
 }
