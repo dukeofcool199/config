@@ -92,7 +92,7 @@ with lib;
       jenkin = enabled;
     };
     utilities = {
-      notetaking = enabled;
+      organization = enabled;
       crypto = enabled;
       networking = enabled;
       office = enabled;
