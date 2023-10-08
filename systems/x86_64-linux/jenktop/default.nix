@@ -139,6 +139,7 @@ with lib;
       nodePackages.mermaid-cli
       mermaid
       fjira
+      polycide
     ];
 
   # This value determines the NixOS release from which the default
