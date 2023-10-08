@@ -16,6 +16,7 @@ in
     };
     environment.systemPackages = with pkgs; [
       httpie
+      http-prompt
       nmap
       curl
       wget
