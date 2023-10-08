@@ -125,6 +125,7 @@ with lib;
   environment.systemPackages = with pkgs;
     [
       email
+      polycide
     ];
 
   # This value determines the NixOS release from which the default
