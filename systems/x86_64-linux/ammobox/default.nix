@@ -126,6 +126,7 @@ with lib;
     [
       email
       polycide
+      mods
     ];
 
   # This value determines the NixOS release from which the default
