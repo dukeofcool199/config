@@ -18,6 +18,7 @@ in
         distrho
         tap-plugins
         noise-repellent
+        rnnoise-plugin
       ];
       variables = {
         LV2_PATH = "/run/current-system/sw/lib/lv2/";
