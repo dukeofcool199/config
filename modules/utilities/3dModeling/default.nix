@@ -13,6 +13,7 @@ in
     environment.systemPackages = with pkgs;
       [
         freecad
+        leocad
         sweethome3d.application
         sweethome3d.textures-editor
         sweethome3d.furniture-editor
