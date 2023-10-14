@@ -3,7 +3,7 @@
 with lib;
 let
   cfg = config.jenkos.utilities.organization;
-  nbTools = with pkgs;[ nodePackages.readability-cli nb poppler_utils w3m nmap pandoc ripgrep tig w3m ];
+  nbTools = with pkgs;[ nodePackages.readability-cli nb poppler_utils w3m nmap pandoc ripgrep tig w3m texlive.combined.scheme-full ];
 in
 {
   options.jenkos.utilities.organization = with types; {
