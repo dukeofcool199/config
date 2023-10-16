@@ -16,11 +16,11 @@ in
     nix = {
       buildMachines = [
         {
-          hostName = "browndog";
+          hostName = "ammobox";
           inherit systems maxJobs supportedFeatures;
         }
         {
-          hostName = "ammobox";
+          hostName = "browndog";
           inherit systems maxJobs supportedFeatures;
         }
       ];
