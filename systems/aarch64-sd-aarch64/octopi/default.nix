@@ -1,5 +1,7 @@
 { pkgs, config, lib, modulesPath, inputs, ... }:
 
+
+with lib;
 {
   imports = with inputs.nixos-hardware.nixosModules; [
     (modulesPath + "/installer/scan/not-detected.nix")
@@ -8,8 +10,24 @@
   nixpkgs.config.allowUnsupportedSystem = true;
   nixpkgs.crossSystem.system = "aarch64-linux";
 
-  # high-resolution display
-  hardware.video.hidpi.enable = true;
+  boot = {
+
+    kernelPackages = pkgs.linuxKernel.packages.linux_rpi3;
+  };
+
+
+  jenkos = {
+    system = {
+      nix = enabled;
+      time = enabled;
+      localisation = enabled;
+      environment = enabled;
+      boot = {
+        enable = mkForce false;
+      };
+    };
+  };
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
