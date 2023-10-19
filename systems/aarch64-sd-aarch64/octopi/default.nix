@@ -11,12 +11,34 @@ with lib;
   nixpkgs.crossSystem.system = "aarch64-linux";
 
   boot = {
-
     kernelPackages = pkgs.linuxKernel.packages.linux_rpi3;
   };
 
-
   jenkos = {
+    services = {
+      octoprint = enabled;
+      ssh = {
+        openssh = enabled;
+      };
+      udisks = enabled;
+    };
+    developer = {
+      git = enabled;
+      vim = enabled;
+      nix = enabled;
+    };
+    users = {
+      jenkin = enabled;
+    };
+    utilities = {
+      networking = enabled;
+      filemanager = {
+        tui = yes;
+      };
+      shelltools = enabled;
+      sysadmin = enabled;
+      filecopy = enabled;
+    };
     system = {
       nix = enabled;
       time = enabled;
