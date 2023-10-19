@@ -41,9 +41,6 @@ with lib;
     };
     system = {
       nix = enabled;
-      time = enabled;
-      localisation = enabled;
-      environment = enabled;
       boot = {
         enable = mkForce false;
       };
