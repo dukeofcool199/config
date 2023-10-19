@@ -507,7 +507,7 @@
         "snowFallFlake": "snowFallFlake",
         "snowfall-lib": "snowfall-lib_3",
         "tunerstudio": "tunerstudio",
-        "unstable": "unstable_2"
+        "unstable": "unstable"
       }
     },
     "snowFallFlake": {
@@ -516,15 +516,14 @@
         "nixpkgs": [
           "unstable"
         ],
-        "snowfall-lib": "snowfall-lib_2",
-        "unstable": "unstable"
+        "snowfall-lib": "snowfall-lib_2"
       },
       "locked": {
-        "lastModified": 1693426329,
-        "narHash": "sha256-waS9I2HNvDN5PTxehHg/po16Ai88csmkKjZxqxLrjB0=",
+        "lastModified": 1694679761,
+        "narHash": "sha256-ApeB7FrOs22I2m1UZq8SaGYj3wEGm5lV9J51aDQsCCE=",
         "owner": "snowfallorg",
         "repo": "flake",
-        "rev": "5df1163dbe8a5d295141fda89a4e8d457f1397ed",
+        "rev": "2cf0254ec8c537a4ef95a57f59ba8db469a21e12",
         "type": "github"
       },
       "original": {
@@ -567,16 +566,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1673270548,
-        "narHash": "sha256-7rgGdtRb42y1yrrRg3SeqosPTeggsPhZCgDebyplKeU=",
+        "lastModified": 1694679207,
+        "narHash": "sha256-g6lYb6nXMpxYUVRZNRZPZI+L31xWlwF/r/oWZmiSYpo=",
         "owner": "snowfallorg",
         "repo": "lib",
-        "rev": "cbe1b6e0fb04243b1c3cd25f6fc0ce86c5248024",
+        "rev": "8df9cb69f2ee4199c2879baaafce4e13864496a7",
         "type": "github"
       },
       "original": {
         "owner": "snowfallorg",
-        "ref": "dev",
         "repo": "lib",
         "type": "github"
       }
@@ -631,22 +629,6 @@
       }
     },
     "unstable": {
-      "locked": {
-        "lastModified": 1673134516,
-        "narHash": "sha256-mAZQKqkNQbBmJnmUU0blOfkKlgMSSVyPHdeWeuKad8U=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "f6f44561884c3470e2b783683d5dbac42dfc833b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "unstable_2": {
       "locked": {
         "lastModified": 1693985761,
         "narHash": "sha256-K5b+7j7Tt3+AqbWkcw+wMeqOAWyCD1MH26FPZyWXpdo=",
