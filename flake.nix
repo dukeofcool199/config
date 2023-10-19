@@ -53,7 +53,7 @@
           inherit inputs;
           src = ./.;
 
-          systems.hosts.skyberspace.modules = with inputs; [
+          systems.hosts.jenktop.modules = with inputs; [
             nixos-hardware.nixosModules.system76
           ];
 
