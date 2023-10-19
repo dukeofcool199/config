@@ -55,7 +55,6 @@ with lib;
       gpg = enabled;
       udisks = enabled;
       pass = enabled;
-      kdeconnect = enabled;
     };
     hardware = {
       zsa = enabled;
