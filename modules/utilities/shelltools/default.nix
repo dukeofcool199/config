@@ -26,7 +26,6 @@ in
       fzf
       ripgrep
       entr
-      steam-run
       xclip
       so
       trashy
