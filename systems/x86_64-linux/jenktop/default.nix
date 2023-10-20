@@ -22,6 +22,7 @@ with lib;
     };
     networking = {
       enable = yes;
+      enableFirewall = false;
       allowedTcpPorts = [ 8081 8082 8080 5000 5173 5174 7946 2377 ];
       allowedUdpPorts = [ 7946 4789 2377 ];
     };
@@ -39,6 +40,7 @@ with lib;
 
         virtualbox = yes;
         virtualboxUsers = [ "jenkin" ];
+
 
         vagrant = yes;
         wine = yes;
@@ -85,7 +87,7 @@ with lib;
       android = enabled;
       java = enabled;
       vscode = enabled;
-      remoteBuilders = enabled;
+      # remoteBuilders = enabled;
     };
     users = {
       jenkin = enabled;
