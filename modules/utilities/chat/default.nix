@@ -22,6 +22,9 @@ in
       qtox
       dino
       tdesktop
+      slack
+      slack-cli
+      slack-term
     ];
 
   };
