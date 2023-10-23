@@ -22,8 +22,7 @@ with lib;
     };
     networking = {
       enable = yes;
-      enableFirewall = false;
-      allowedTcpPorts = [ 8081 8082 8080 5000 5173 5174 7946 2377 ];
+      allowedTcpPorts = [ 8081 8082 8080 5000 5173 5174 7946 2377 6443 ];
       allowedUdpPorts = [ 7946 4789 2377 ];
     };
     autorandr = {
