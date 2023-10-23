@@ -87,7 +87,7 @@ with lib;
       android = enabled;
       java = enabled;
       vscode = enabled;
-      # remoteBuilders = enabled;
+      remoteBuilders = enabled;
     };
     users = {
       jenkin = enabled;

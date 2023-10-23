@@ -9,7 +9,9 @@ let
 in
 {
   options.jenkos.developer.remoteBuilders = with types; {
-    enable = mkBoolOpt false "enable nix remote builders?";
+    enable = mkBoolOpt false "setup the remote builders for this machine?";
+    distribute = mkBoolOpt false "enable automatic build distribution?";
+
   };
 
   config = mkIf cfg.enable {
@@ -25,7 +27,7 @@ in
         }
       ];
 
-      distributedBuilds = true;
+      distributedBuilds = cfg.distribute;
       extraOptions = ''
         builders-use-substitutes = true
       '';
