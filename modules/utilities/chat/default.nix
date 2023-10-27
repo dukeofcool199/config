@@ -18,6 +18,7 @@ in
       discord
       element-desktop
       workchat
+      teams-for-linux
       gajim
       qtox
       dino
