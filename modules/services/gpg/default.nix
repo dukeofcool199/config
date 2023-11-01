@@ -14,6 +14,7 @@ in
     environment.systemPackages = with pkgs; [
       qrencode
       paperkey
+      gpg-tui
     ];
     programs.gnupg.agent = {
       enable = true;
