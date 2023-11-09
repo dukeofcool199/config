@@ -34,13 +34,7 @@ with lib;
         docker = yes;
         docker-rootless = yes;
         vmware = yes;
-
         qemu = yes;
-
-        virtualbox = yes;
-        virtualboxUsers = [ "jenkin" ];
-
-
         vagrant = yes;
         wine = yes;
       };
@@ -139,7 +133,6 @@ with lib;
       nodePackages.mermaid-cli
       mermaid
       fjira
-      polycide
     ];
 
   # This value determines the NixOS release from which the default
