@@ -125,7 +125,6 @@ with lib;
   environment.systemPackages = with pkgs;
     [
       email
-      polycide
       mods
     ];
 
