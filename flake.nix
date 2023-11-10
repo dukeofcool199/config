@@ -78,7 +78,7 @@
           {
             devShells.default = mkShell
               {
-                buildInputs = [ inputs.snowFallFlake.packages.${system}.default git-bug git-appraise bugs ];
+                buildInputs = [ inputs.snowFallFlake.packages.${system}.default git-bug git-appraise git-appraise bugs ];
                 # shellHook = ''git bug pull && git bug push'';
               };
           });
