@@ -28,6 +28,7 @@ in
       entr
       xclip
       so
+      broot
       trashy
     ];
 
