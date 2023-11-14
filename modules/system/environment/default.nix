@@ -11,7 +11,7 @@ in
   config = mkIf cfg.enable {
     environment.shells = [ pkgs.bashInteractive pkgs.zsh ];
 
-    boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+    boot.binfmt.emulatedSystems = [ "aarch64-linux" "powerpc64le-linux" ];
   };
 }
 
