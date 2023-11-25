@@ -243,11 +243,11 @@
         "snowfall-lib": "snowfall-lib"
       },
       "locked": {
-        "lastModified": 1699458016,
-        "narHash": "sha256-OKXmq0F6yF/w231/GBVEwSZIJY/Ngx5iSPt/a4GBVUs=",
+        "lastModified": 1700883199,
+        "narHash": "sha256-P2qCuyfR2XJtuZ3/eUSC7rqF4wBqi+A+MlshG5hDYxg=",
         "owner": "dukeofcool199",
         "repo": "neovim",
-        "rev": "6c2194f14a3a4d212a111b30d0f9d0570352eff5",
+        "rev": "76b96de9fb8973d65ec7d36360a9c8b15acf3f84",
         "type": "github"
       },
       "original": {
