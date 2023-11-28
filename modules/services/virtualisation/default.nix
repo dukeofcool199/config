@@ -25,7 +25,7 @@ in
     ] else [ ]) ++
     (if cfg.vagrant then [
       vagrant
-    ] else [ ]) ++ optList cfg.wine [ wine wine64 winetricks ] ++ optList cfg.podman [ podman podman-compose podman-tui pods ] ++ optList cfg.qemu [ qemu_full qemu-utils ];
+    ] else [ ]) ++ optList cfg.wine [ wine wine64 winetricks ] ++ optList cfg.podman [ podman podman-compose podman-tui pods ] ++ optList cfg.qemu [ qemu_full qemu-utils virt-manager ];
 
     virtualisation = {
       vmware = {
