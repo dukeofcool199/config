@@ -11,7 +11,7 @@ in
 
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
-      nodejs-18_x
+      nodejs_20
       bun
     ];
   };
