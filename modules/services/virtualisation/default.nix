@@ -27,11 +27,15 @@ in
       vagrant
     ] else [ ]) ++ optList cfg.wine [ wine wine64 winetricks ] ++ optList cfg.podman [ podman podman-compose podman-tui pods ] ++ optList cfg.qemu [ qemu_full qemu-utils virt-manager ];
 
+    programs.dconf.enable = true;
     virtualisation = {
       vmware = {
         host = {
           enable = cfg.vmware;
         };
+      };
+      libvirtd = {
+        enable = cfg.qemu;
       };
       virtualbox = {
         host = {

@@ -15,7 +15,7 @@ in
     users.users.jenkin = {
       isNormalUser = true;
       description = "Jenkin Schibel";
-      extraGroups = [ "networkmanager" "wheel" "video" "adbusers" "docker" "podman" "jackaudio" "dialout" ] ++ cfg.extraGroups;
+      extraGroups = [ "networkmanager" "wheel" "video" "adbusers" "docker" "podman" "jackaudio" "dialout" "libvirtd" ] ++ cfg.extraGroups;
       shell = pkgs.zsh;
       initialPassword = "";
     };
