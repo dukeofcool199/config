@@ -3,7 +3,7 @@
 with lib;
 let
   cfg = config.jenkos.developer.remoteBuilders;
-  systems = [ "x86_64-linux" "aarch64-linux" ];
+  systems = [ "x86_64-linux" "aarch64-linux" "powerpc64le-linux" ];
   maxJobs = 4;
   supportedFeatures = [ "big-parallel" "nixos-test" "benchmark" "kvm" ];
 in
