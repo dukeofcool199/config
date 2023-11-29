@@ -23,6 +23,9 @@
     charmbracelet.url = "github:charmbracelet/nur";
 
     blender-bin.url = "github:edolstra/nix-warez?dir=blender";
+    nixos-anywhere.url = "github:nix-community/nixos-anywhere";
+
+    disko.url = "github:nix-community/disko";
 
     tunerstudio = {
       url = "https://www.tunerstudio.com/downloads2/TunerStudioMS_v3.1.08.tar.gz";
