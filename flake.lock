@@ -304,11 +304,11 @@
         "snowfall-lib": "snowfall-lib"
       },
       "locked": {
-        "lastModified": 1701190130,
-        "narHash": "sha256-CnOXTb7QKcIvJky2HJzk7pndDuq2bjyql6iF77gMFoo=",
+        "lastModified": 1701482819,
+        "narHash": "sha256-gHg/RJlyLkXMv5FRJ7pmJy9vWkcl3JzLjPFkO2RPKp8=",
         "owner": "dukeofcool199",
         "repo": "neovim",
-        "rev": "eee9ed837798019a02de10e4bf823e9d2468ce95",
+        "rev": "c0a50db835f2a85a7a6216c3367f9c6766b22ae0",
         "type": "github"
       },
       "original": {
